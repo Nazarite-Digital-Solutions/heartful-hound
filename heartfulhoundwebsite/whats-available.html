@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+    <title>What's Available | Heartful Hound | Dog Behaviour & Training</title>
+    <meta name="description" content="Explore Heartful Hound’s dog training and behaviour services, including personalised training sessions, behaviour support, and guidance to help your dog become calm, confident, and well-behaved.">
+    
+    <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg" />
+    <link rel="stylesheet" href="header-css.css" />
+    
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #E6B8AD;
+        font-family: 'Times New Roman', Times, sans-serif;
+        padding-top: 3rem;
+        min-height: 100vh;
+      }
+
+      /* ---------- WHATS AVAILABLE PAGE WRAPPER ---------- */
+      
+      .page-wrapper {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 0 2rem;
+        padding-bottom: 1rem;    
+      }
+
+      /* ---------- WHATS AVAILABLE SECTION ---------- */
+      
+      .section-whats-available {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .section-whats-available h1 {
+        font-size: 2.8rem;
+        font-style: italic;
+        color: #000;
+        margin-bottom: 1.5rem;
+      }
+
+      /* ---------- SERVICES BOXESS ---------- */
+      
+      .service-boxes {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .service-box {
+        flex: 1;
+        min-width: 0;
+        border: 2px solid #6F6F6F;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-box .img-slot {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .service-box .img-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    
+      .service-box .img-slot picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .service-box .text-area {
+        background-color: white;
+        padding: 1rem 1rem 1.2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+
+      .service-box .text-area .line {
+        min-height: 1.6rem;
+        font-size: 0.95rem;
+        color: black;
+        padding-bottom: 0.3rem;
+      }
+    
+      .bold-line {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .service-box .text-area .line:last-child {
+        border-bottom: none;
+      }
+
+      /* ---------- TRAINING SCHOOL SECTION ---------- */
+      
+      .section-training {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-training h2 {
+        font-size: 2.4rem;
+        color: black;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-training .sub-heading {
+        font-size: 1.4rem;
+        font-style: italic;
+        font-weight: 700;
+        color: black;
+        margin-bottom: 1.5rem;
+      }
+    
+      .whats-covered-heading {
+        font-size: 1.4rem;
+        color: black;
+        font-weight: 700;
+        font-style: italic;
+        text-decoration: 2px underline #6F6F6F;
+        padding-bottom: 1rem; 
+      }
+      
+      .sentence-lines {
+        margin: 0 auto 2rem;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem; 
+        border: 2px solid #6F6F6F;
+        border-radius: 0.5rem;
+        background-color: white;
+        text-align: center;
+      }
+
+      .sentence-lines .s-line {
+        min-height: 1.8rem;
+        font-size: 1.2rem;
+        color: #222;
+        padding-bottom: 0.25rem;
+        text-align: center;
+      }
+
+      /* ---------- CLASSES BOX ---------- */
+      
+      .classes-box-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+
+      .classes-box {
+        border: 2px solid #6F6F6F;
+        border-radius: 0.5rem;
+        background-color: white;
+        padding: 1.4rem 2rem 1.4rem 1.5rem;
+        width: 55%;
+        min-width: 280px;
+        text-align: center;
+        font-size: 1.15rem;
+      }
+
+      .classes-title {
+        font-weight: 700;
+        font-style: italic;
+        color: black;
+        margin-bottom: 0.9rem;
+        font-size: 1.8rem; 
+        text-decoration: 2px underline #6F6F6F;
+      }
+
+      .classes-box ul {
+        list-style: none;
+        padding-left: 1.3rem;
+      }
+      
+      .sub {
+        color: black;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #6F6F6F;
+        padding-top: 0.5rem;
+      }
+      
+      .age-label {
+        display: inline-block;
+        font-weight: 700;
+        color: black;
+        margin-top: 1rem;
+      }
+
+      .desc {
+        display: inline-block;
+        font-weight: 700;
+        color: #6F6F6F;
+        margin-top: 1rem;
+      }
+      
+      .sub-last-line {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        padding-top: 0.5rem;
+        color: black;
+        font-weight: 700;
+        border-bottom: 2px solid #6F6F6F;
+      }
+      
+      /* ---------- PUPPY SCHOOL OVERVIEW SECTION ---------- */
+      
+      .section-info {
+        display: flex;
+        gap: 3vw;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+      }
+
+      .info-text {
+        width: 60%;
+      }
+
+      .info-text h3 {
+        font-size: 1.8rem;
+        color: black;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .info-text p {
+        font-size: 1.2rem;
+        color: black;
+        line-height: 1.75;
+        text-align: left;
+        margin-bottom: 1.4rem;
+      }
+
+      .contact-btn {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-style: italic;
+        font-weight: 700;
+        color: black;
+        background-color: #6F6F6F;
+        border: 2px solid #6F6F6F;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        transition: transform 0.18s ease;
+        text-decoration: none;
+      }
+      
+      .contact-btn + .contact-btn {
+        margin-top: 1rem;
+      }
+    
+      .contact-btn:hover {
+        transform: translateY(-4px);
+      }
+      
+      .info-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border-radius: 0.5rem;
+      }
+    
+      .info-image picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ---------- FOOTER ---------- */
+    
+      .footer {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .footer p {
+        font-size: 0.8rem;
+        font-style: normal;
+        color: black;
+      }
+    
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 1024px ---------- */
+      
+      @media (max-width: 1024px) {
+        .service-boxes {
+          gap: 1rem;
+        }
+
+        .classes-box {
+          width: 70%;
+        }
+
+        .sentence-lines {
+          width: 90%;
+        }
+
+        /* ---------- DISABLE HOVER EFFECTS ---------- */
+        
+        .contact-btn:hover {
+          transform: none;
+        }
+      }
+
+      /* ---------- 700px ---------- */
+      
+      @media (max-width: 700px) {
+        body {
+          padding-top: 4rem;
+        }
+
+        .page-wrapper {
+          width: 95%;
+          padding: 2rem 0 1.5rem;
+        }
+
+        .section-whats-available h1 {
+          font-size: 2.2rem;
+        }
+
+        .service-boxes {
+          flex-direction: column;
+          gap: 1.2rem;
+          align-items: center;
+        }
+
+        .service-box {
+          width: 80vw;
+          flex: unset;
+        }
+
+        .section-training h2 {
+          font-size: 2rem;
+        }
+
+        .section-training .sub-heading {
+          font-size: 1.2rem;
+        }
+
+        .sentence-lines {
+          width: 95%;
+        }
+
+        .classes-box {
+          width: 85%;
+        }
+        
+        .classes-title {
+          font-size: 1.6rem;
+        }
+        
+        .sub,
+        .sub-last-line {
+          font-size: 1.05rem;
+        }
+        
+        .age-label,
+        .desc {
+          font-size: 1.05rem;
+        }
+
+        .section-info {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .info-text {
+          width: 100%;
+        }
+
+        .info-image {
+          width: 100%;
+        }
+        
+        .info-image img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+
+        /* ---------- DISABLE HOVER EFFECTS ---------- */
+        
+        .contact-btn:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      /* ---------- 468px ---------- */
+      
+      @media (max-width: 468px) {
+        body {
+          padding-top: 4rem;
+        }
+        .page-wrapper {
+          width: 98%;
+          padding: 1.5rem 0 1rem;
+          padding-top: 1rem;
+        }
+
+        .section-whats-available h1 {
+          font-size: 1.8rem;
+        }
+
+        .service-box {
+          width: 94vw;
+        }
+
+        .service-box .text-area {
+          padding: 0.7rem 0.7rem 0.9rem;
+        }
+
+        .section-training h2 {
+          font-size: 1.7rem;
+        }
+
+        .section-training .sub-heading {
+          font-size: 1.1rem;
+        }
+
+        .classes-box {
+          width: 96%;
+          padding: 1rem 1rem;
+        }
+        
+        .classes-title {
+          font-size: 1.4rem;
+        }
+        
+        .sub,
+        .sub-last-line {
+          font-size: 1rem;
+        }
+        
+        .age-label,
+        .desc {
+          font-size: 1rem;
+        }
+
+        .info-text h3 {
+          font-size: 1.4rem;
+        }
+
+        .info-text p {
+          font-size: 0.95rem;
+        }
+  
+        .contact-btn {
+          font-size: 1.05rem;
+          padding: 0.55rem 1.4rem;
+        }
+
+        /* ---------- DISABLE HOVER EFFECTS ---------- */
+        
+        .contact-btn:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  
+<!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
+  
+  <body>
+
+<!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
+  
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      
+      <!---------- LOGO ---------->
+
+      <a href="index.html" class="navbar__logo" aria-label="Home">
+        <picture class="navbar__logo-img">
+          <source srcset="heartful-hound-logo.webp" type="image/webp" />
+          <img src="heartful-hound-logo.png" alt="Heartful Hound logo" class="navbar__logo-image" />
+        </picture>
+      </a>
+
+      <!---------- HAMBURGER ---------->
+
+      <button
+        class="navbar__hamburger"
+        id="hamburgerBtn"
+        aria-expanded="false"
+        aria-controls="navDropdown"
+        aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!---------- HAMBURGER DROP DOWN LINKS ---------->
+      
+      <ul class="navbar__dropdown" id="navDropdown" role="menu">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
+        <li role="none"><a href="whats-available.html" role="menuitem">What's Available?</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+      </ul>
+    </nav>
+
+<!-- ─────────────────────────────────────────────────── SCRIPT ──────────────────────────────────────────────────── -->
+
+    <script>
+      const btn = document.getElementById("hamburgerBtn");
+      const dropdown = document.getElementById("navDropdown");
+
+      btn.addEventListener("click", () => {
+        const isOpen = btn.classList.toggle("is-open");
+        dropdown.classList.toggle("is-open", isOpen);
+        btn.setAttribute("aria-expanded", isOpen);
+      });
+
+      dropdown.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          btn.classList.remove("is-open");
+          dropdown.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+          btn.classList.remove("is-open");
+          dropdown.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+    
+<!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
+
+    <div class="page-wrapper">
+
+    <!-- ── WHAT'S AVAILABLE ── -->
+      <section class="section-whats-available">
+        <h1>What's Available</h1>
+
+        <div class="service-boxes">
+
+          <!---------- SERVICE BOX 1 ---------->
+          
+          <div class="service-box">
+            <div class="img-slot">
+              <picture class="card-image-slot">
+                <source srcset="whatsavailable-image1.webp" type="image/webp">
+                <img src="whatsavailable-image1.jpg" alt="Canine Companion School Image" loading="lazy">
+              </picture>
+            </div>
+            <div class="text-area">
+              <div class="line">Canine Companion School</div>
+              <div class="bold-line">Puppy | Adolescent | Adult | Training School</div>
+            </div>
+          </div>
+
+          <!---------- SERVICE BOX 2 ---------->
+          
+          <div class="service-box">
+            <div class="img-slot">
+              <picture class="card-image-slot">
+                <source srcset="whatsavailable-image2.webp" type="image/webp">
+                <img src="whatsavailable-image2.jpg" alt="Canine Companion Behaviour Consultation Image" loading="lazy">
+              </picture>
+            </div>
+            <div class="text-area">
+              <div class="line">Canine Companion Behaviour Consultation</div>
+              <div class="bold-line">Consultation &amp; Bespoke Modification Plan</div>
+            </div>
+          </div>
+
+          <!---------- SERVICE BOX 3 ---------->
+          
+          <div class="service-box">
+            <div class="img-slot">
+              <picture class="card-image-slot">
+                <source srcset="whatsavailable-image3.webp" type="image/webp">
+                <img src="whatsavailable-image3.jpg" alt="Feline Companion Behaviour Consultations Image" loading="lazy">
+              </picture>
+            </div>
+            <div class="text-area">
+              <div class="line">Feline Companion Behaviour Consultations</div>
+              <div class="bold-line">Consultation &amp; Bespoke Modification Plan</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!---------- TRAINING SCHOOL ---------->
+      
+      <section class="section-training">
+        <h2>Training school</h2>
+        <p class="sub-heading">For the greatest beginning in life</p>
+
+        <div class="sentence-lines">
+          <div class="whats-covered-heading">What’s covered in the 5-week course:</div>
+          <div class="s-line">&bull; Positive reinforcement training of basic cues.</div>
+          <div class="s-line">&bull; Positive reinforcement training of body handling.</div>
+          <div class="s-line">&bull; Nutrition and feeding.</div>
+          <div class="s-line">&bull; Preventions and solutions to common problematic behaviours.</div>
+          <div class="s-line">&bull; Mental and physical enrichment.</div>
+          <div class="s-line">&bull; Socialisation to people, objects and foreign places.</div>
+          <div class="s-line">&bull; Health and wellness topics.</div>
+        </div>
+
+        <!---------- CLASSES BOX ---------->
+        
+        <div class="classes-box-wrapper">
+          <div class="classes-box">
+            <p class="classes-title">Classes for various ages</p>
+            <ul>
+              <li class="class-group">
+                <span class="age-label">The Little Legends class:</span>
+                <span class="desc">8 to 16 weeks</span>
+              </li>
+              <li class="sub">Raising confident pups from the very beginning</li>
+              <li class="class-group">
+                <span class="age-label">The rebel class:</span>
+                <span class="desc">4 to 7 months</span>
+              </li>
+              <li class="sub">Because growing up comes with challenges</li>
+              <li class="class-group">
+                <span class="age-label">The teen spirit class:</span>
+                <span class="desc">7 to 12 months</span>
+              </li>
+              <li class="sub">Helping teenage dogs find their focus</li>
+              <li class="class-group">
+                <span class="age-label">The glow up class:</span>
+                <span class="desc">12 months plus</span>
+              </li>
+              <li class="sub-last-line">Because it’s never too late for a fresh start</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-info">
+
+        <!---------- PUPPY SCHOOL OVERVIEW ---------->
+        
+        <div class="info-text">
+          <h3>PUPPY SCHOOL OVERVIEW</h3>
+          <p>
+            All programs run over 5 consecutive weeks (one lesson each week for an hour). 
+            We offer lessons at Seadoone veterinary clinic. 
+            In addition we offer private at home lessons for our clients who prefer this option.  
+            All dogs must be on lead and preferably wearing a harness which fits correctly. 
+          </p>
+          <a href="reviews.html" class="contact-btn">Our Reviews</a>
+          <a href="contact.html" class="contact-btn">Contact Us</a>
+        </div>
+
+        <!---------- PUPPY SCHOOL IMAGE ---------->
+        
+        <div class="info-image">
+          <picture>
+            <source srcset="puppy-school-image.webp" type="image/webp">
+            <img src="puppy-school-image.jpg" alt="Puppy School Image" loading="lazy">
+          </picture>
+        </div>
+      </section>
+
+      <!---------- FOOTER ---------->
+      
+      <footer class="footer">
+        <p>&copy; 2025 Heartful Hound. All rights reserved.</p>
+      </footer>
+
+  </div>
+  </body>
+</html>

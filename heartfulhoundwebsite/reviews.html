@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Reviews | Heartful Hound | Dog Behaviour & Training</title>
+    <meta name="description" content="Read client reviews and success stories from Heartful Hound dog training and behaviour support.">
+    
+    <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg" />
+    <link rel="stylesheet" href="header-css.css" />
+  
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Times New Roman', Times, sans-serif;
+        background-color: #E6B8AD;
+        min-height: 100vh;
+        padding-top: 3rem;
+      }
+
+      /* ---------- REVIEWS PAGE WRAPPER ---------- */
+      
+      .page-wrapper {
+        width: 88%;
+        max-width: 820px;
+        margin: 0 auto;
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* ---------- PAGE HEADING ---------- */
+      
+      .reviews__heading {
+        font-size: 2.8rem;
+        font-weight: 700;
+        font-style: italic;
+        color: black;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      /* ---------- REVIEW BOXES ---------- */
+      
+      .reviews__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+      }
+
+      .review-box {
+        width: 100%;
+        background: white;
+        border: 3px solid #6F6F6F;
+        border-radius: 0.5rem;
+        padding: 1.8rem 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .review-box__body {
+        font-size: 1rem;
+        color: black;
+        line-height: 1.85;
+        text-align: left;
+        white-space: pre-line;
+        flex: 1;
+      }
+
+      .review-box__author {
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-style: italic;
+        color: black;
+        text-align: center;
+        margin-top: 1.4rem;
+        padding-top: 1rem;
+        border-top: 1px solid #E0E0E0;
+      }
+
+      /* ---------- COPYRIGHT ---------- */
+      
+      .copyright {
+        font-size: 0.8rem;
+        color: black;
+        font-style: normal;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      /* ---------- BUTTONS ---------- */
+      
+      .reviews__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .reviews__btn {
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-style: italic;
+        color: black;
+        background-color: #6F6F6F;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.18s ease;
+      }
+    
+      .reviews__btn:hover {
+        transform: translateY(-4px);
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 1024px ---------- */
+      
+      @media (max-width: 1024px) {
+        .reviews__heading { 
+          font-size: 2.4rem; 
+        }
+        
+        .page-wrapper { 
+          width: 92%; 
+        }
+        
+        .reviews__btn:hover { 
+          transform: none; 
+        }
+      }
+
+      /* ---------- 700px ---------- */
+      
+      @media (max-width: 700px) {
+        .reviews__heading { 
+          font-size: 2rem; 
+        }
+        
+        .page-wrapper { 
+          width: 95%; 
+          padding-top: 2.5rem; 
+        }
+        
+        .review-box { 
+          padding: 1.4rem 1.4rem 1.2rem; 
+        }
+        
+        .review-box__body { 
+          font-size: 0.97rem; 
+        }
+        
+        .reviews__btn:hover { 
+          transform: none; 
+        }
+      }
+
+      /* ---------- 468px ---------- */
+    
+      @media (max-width: 468px) {
+        .reviews__heading { 
+          font-size: 1.6rem; 
+          margin-bottom: 1.8rem; 
+        }
+        
+        .page-wrapper { 
+          width: 98%; 
+          padding-top: 2rem; 
+        }
+        
+        .review-box { 
+          padding: 1.1rem 1rem 1rem; 
+        }
+        
+        .review-box__body { 
+          font-size: 0.92rem; 
+          line-height: 1.75; 
+        }
+        
+        .review-box__author { 
+          font-size: 0.95rem; 
+          margin-top: 1rem; 
+          padding-top: 0.8rem; 
+        }
+        
+        .reviews__buttons { 
+          flex-direction: column; 
+          align-items: center; 
+          gap: 0.8rem; 
+        }
+        
+        .reviews__btn:hover { 
+          transform: none; 
+        }
+      }
+    </style>
+  </head>
+  
+<!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
+  
+  <body>
+  
+<!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
+  
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      
+      <!---------- LOGO ---------->
+
+      <a href="index.html" class="navbar__logo" aria-label="Home">
+        <picture class="navbar__logo-img">
+          <source srcset="heartful-hound-logo.webp" type="image/webp" />
+          <img src="heartful-hound-logo.png" alt="Heartful Hound logo" class="navbar__logo-image" />
+        </picture>
+      </a>
+
+      <!---------- HAMBURGER ---------->
+
+      <button
+        class="navbar__hamburger"
+        id="hamburgerBtn"
+        aria-expanded="false"
+        aria-controls="navDropdown"
+        aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!---------- HAMBURGER DROP DOWN LINKS ---------->
+      
+      <ul class="navbar__dropdown" id="navDropdown" role="menu">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
+        <li role="none"><a href="whats-available.html" role="menuitem">What's Available?</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+      </ul>
+    </nav>
+
+<!-- ─────────────────────────────────────────────────── SCRIPT ──────────────────────────────────────────────────── -->
+
+    <script>
+      const btn = document.getElementById("hamburgerBtn");
+      const dropdown = document.getElementById("navDropdown");
+
+      btn.addEventListener("click", () => {
+        const isOpen = btn.classList.toggle("is-open");
+        dropdown.classList.toggle("is-open", isOpen);
+        btn.setAttribute("aria-expanded", isOpen);
+      });
+
+      dropdown.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          btn.classList.remove("is-open");
+          dropdown.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+          btn.classList.remove("is-open");
+          dropdown.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+    
+<!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
+
+
+    <div class="page-wrapper">
+
+      <h1 class="reviews__heading">See Our Reviews</h1>
+
+      <div class="reviews__list">
+
+        <!---------- REVIEWS BOX 1 ---------->
+        
+        <div class="review-box">
+          <p class="review-box__body">
+            Natasha is absolutely incredible — I couldn't recommend her more! We did the puppy classes with her, and 
+            she taught not only my puppy but, more importantly, me so much. Thank you, thank you, thank you!
+          </p>
+          <p class="review-box__author">Milan Le Roux</p>
+        </div>
+
+         <!---------- REVIEWS BOX 2 ---------->
+        
+        <div class="review-box">
+          <p class="review-box__body">
+            We enrolled Max at Heartful Hound when he was still a tiny puppy, and it was honestly one of the best 
+            decisions we could have made. Since starting puppy school, he has overcome so many fears, learnt discipline, 
+            and developed such wonderful manners, including learning not to chew on things he shouldn't!
+
+            Tash is truly a phenomenal trainer. Her patience, knowledge, and love for the dogs shine through in every 
+            session, and Max absolutely adores her. We always look forward to the next phase of training because of how 
+            positive and rewarding the experience has been.
+
+            We constantly receive compliments about how well-behaved, friendly, and adorable Max is, and we owe so 
+            much of that to Heartful Hound. I absolutely love that he confidently knows commands like sit, down, stay, 
+            and paw.
+
+            Thank you, Tash, for helping Max grow into such a happy and well-mannered boy. We couldn't recommend Heartful 
+            Hound more highly!
+          </p>
+          <p class="review-box__author">Veronique and Maximus</p>
+        </div>
+
+        <!---------- REVIEWS BOX 3 ---------->
+        
+        <div class="review-box">
+          <p class="review-box__body">
+            Natasha was honestly a LIFE SAVER in helping deal with our two dogs.
+            Things she fixed:
+            No more biting, no more jumping, no more eating everything in sight. WAY less digging (and an easier way to 
+            deal with it). We were able to use what we learned to teach them useful commands like: stop; wait; leave, 
+            and even some ones like "where's (name)?" and then they scurry off to find the right person / doggo to bring 
+            them back (absolute treat to watch, super cute). We were taught how to call our doggos back to us when they 
+            happen to run out the gate, or even escape from the leash! (thank GOODNESS for that one). Best of all (for the 
+            doggos, anyway), we were able to find a lot more things to keep their minds busy and keep them out of trouble. 
+            And its fun! I never realized how many activities you can do with your dog and how enjoyable it would be! Both of 
+            us have truly bonded with our kids on a level we didn't really think possible.
+
+            The communication is smooth, and we all understand each other. My favourite part about this training was 
+            that it was more reward/distract-focused, and not based on punishment. We also learned SO MUCH about a dog's 
+            biology, their behaviour and their social cues. (My personal favourite is 'zoomies'!!!). Her method is based 
+            on science and peer-reviewed research. Any and all questions we had, no matter how stupid or weird, were 
+            answered in full. Honestly you might find yourself becoming a bit of an animal expert yourself 😊 I know this 
+            all sounds over-the-top maybe, but once you speak to her, you'll know what I mean. This lady studies canine 
+            behaviour and she's also available to help with any questions or concerns you may have LONG after your final 
+            session. The kids also got their own bandannas for graduation, and I've never seen prouder pups.
+
+            Finally, we are busy (and admittedly lazy at times) people, however the program was designed to completely 
+            work around that. It's honestly fantastic. The program is designed to help YOU in any way possible so that 
+            you and your puppers can have the best relationship possible.
+
+            Thank you so, so much Natasha. The experience was eye-opening and an absolute pleasure. Needless to say, I 
+            highly recommend!
+          </p>
+          <p class="review-box__author">Danielle &amp; JD</p>
+      </div>
+
+      </div>
+      
+      <!---------- BUTTONS ---------->
+
+      <div class="reviews__buttons">
+        <a href="whats-available.html" class="reviews__btn">What's Available?</a>
+        <a href="contact.html" class="reviews__btn">Contact Us</a>
+      </div>
+
+      <!---------- COPYRIGHT ---------->
+      
+      <p class="copyright">&copy; 2025 Heartful Hound. All rights reserved.</p>
+
+    </div>
+  </body>
+</html>

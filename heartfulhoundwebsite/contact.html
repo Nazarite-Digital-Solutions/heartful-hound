@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+    <title>Contact | Heartful Hound | Dog Behaviour & Training</title>
+    <meta name="description" content="Contact Heartful Hound for professional dog training and behaviour support in Durban and KwaZulu-Natal. WhatsApp, email, and consultation enquiries available.">
+    
+    <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg" />
+    <link rel="stylesheet" href="header-css.css" />
+  
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #E6B8AD;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ---------- CONTACT PAGE CONTENTS ---------- */
+      
+      .contact-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 5vw 3rem;
+        padding-top: 6rem;
+      }
+
+      /* ---------- CONTACT PAGE HEADING ---------- */
+      
+      .page-heading {
+        font-size: 2.8rem;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: 0.05em;
+        color: black;
+        text-align: center;
+        margin-bottom: 1.8rem;
+      }
+
+      /* ---------- CONTACT BOX ---------- */
+      
+      .contact-box {
+        background: white;
+        border: 2px solid #6F6F6F;
+        border-radius: 6px;
+        width: 100%;
+        max-width: 520px;
+        padding: 1.5rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+      }
+      
+      .phone-number {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: black;
+      }
+
+      .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        width: 80%;
+        max-width: 320px;
+        padding: 0.75rem 1.4rem;
+        background: white;
+        border-radius: 4px;
+        font-style: italic;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.18s ease;
+      }
+
+      /* ---------- WHATSAPP BUTTON ---------- */
+      
+      .btn-whatsapp {
+        border: 2px solid #25D366;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      /* ---------- EMAIL BUTTON ---------- */
+      
+      .btn-email {
+        border: 2px solid #6F6F6F;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      /* ---------- HOVER EFFECTS ONLY ON DESKTOP ---------- */
+        
+      @media (hover: hover) and (pointer: fine) {
+        .btn-whatsapp:hover {
+          background: #25D366;
+          color: white;
+          transform: translateY(-4px);
+        }
+
+        .btn-email:hover {
+          background: #6F6F6F;
+          color: white;
+          transform: translateY(-4px);
+        }
+      }
+
+      /* ---------- GET SOCIAL SECTION ---------- */
+      
+      .social-heading {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: black;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.4rem;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.2rem;
+        height: 3.2rem;
+        border: 1px solid rgba(24, 119, 242, 0.9);
+        border-radius: 0.5rem;
+        background: white;
+        padding: 0.2rem;
+        text-decoration: none;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .social-link svg {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .social-link:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 0 60px rgba(24, 119, 242, 0.9);
+        }
+      }
+
+      /* ---------- COPYRIGHT ---------- */
+      
+      .copyright {
+        font-size: 0.8rem;
+        color: black;
+        text-align: center;
+        margin-top: 0.6rem;
+      }
+
+      /* ---------- ICON SVG ---------- */
+      
+      .icon {
+        width: 1.1rem;
+        height: 1.1rem;
+        flex-shrink: 0;
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 1024px ---------- */
+      
+      @media screen and (max-width: 1024px) {
+        .page-heading {
+          font-size: 2rem;
+        }
+
+        .contact-box {
+          max-width: 480px;
+          padding: 2.2rem 1.8rem 1.8rem;
+        }
+
+        .contact-btn {
+          width: 85%;
+          font-size: 0.98rem;
+        }
+      }
+
+      /* ---------- 700px ---------- */
+      
+      @media screen and (max-width: 700px) {
+        .page-heading {
+          font-size: 2.2rem;
+          letter-spacing: 0.08em;
+        }
+
+        .contact-box {
+          max-width: 94vw;
+          padding: 2rem 1.4rem 1.6rem;
+          gap: 1rem;
+        }
+
+        .contact-btn {
+          width: 90%;
+          font-size: 1.1rem;
+          padding: 0.7rem 1.1rem;
+          transition: none;
+        }
+
+        .btn-whatsapp:hover,
+        .btn-email:hover {
+          background: white !important;
+          color: black !important;
+          transform: none !important;
+          box-shadow: none !important;
+        }
+      
+        .contact-btn:hover {
+          background: white !important;
+          color: black !important;
+          transform: none !important;
+        }
+
+        .social-link:hover {
+          transform: none !important;
+          box-shadow: none !important;
+        }
+
+        .social-heading {
+          font-size: 1.3rem;
+        }
+        
+        .social-link svg {
+          width: 2.6rem;
+          height: 2.6rem;
+        }
+      }
+
+      /* ---------- 468px ---------- */
+      
+      @media screen and (max-width: 468px) {
+        .contact-wrapper {
+          padding: 0.8rem 4vw 2rem;
+          padding-top: 5rem;
+        }
+
+        .page-heading {
+          font-size: 1.9rem;
+          letter-spacing: 0.05em;
+          margin-bottom: 1.2rem;
+        }
+
+        .contact-box {
+          max-width: 96vw;
+          padding: 1.6rem 1rem 1.4rem;
+          gap: 0.9rem;
+        }
+
+        .contact-btn {
+          width: 95%;
+          font-size: 1.2rem;
+          padding: 0.65rem 0.9rem;
+          transition: none;
+        }
+
+      
+        .btn-whatsapp:hover,
+        .btn-email:hover {
+          background: white !important;
+          color: black !important;
+          transform: none !important;
+          box-shadow: none !important;
+        }
+      
+        .contact-btn:hover {
+          background: white !important;
+          color: black !important;
+          transform: none !important;
+        }
+
+        .social-link:hover {
+          transform: none !important;
+          box-shadow: none !important;
+        }
+
+        .social-link svg {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+        
+        .social-heading {
+          font-size: 1.3rem;
+        }
+
+        .copyright {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  
+<!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
+  
+  <body>
+
+<!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
+  
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      
+      <!---------- LOGO ---------->
+
+      <a href="index.html" class="navbar__logo" aria-label="Home">
+        <picture class="navbar__logo-img">
+          <source srcset="heartful-hound-logo.webp" type="image/webp" />
+          <img src="heartful-hound-logo.png" alt="Heartful Hound logo" class="navbar__logo-image" />
+        </picture>
+      </a>
+
+      <!---------- HAMBURGER ---------->
+
+      <button
+        class="navbar__hamburger"
+        id="hamburgerBtn"
+        aria-expanded="false"
+        aria-controls="navDropdown"
+        aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!---------- HAMBURGER DROP DOWN LINKS ---------->
+      
+      <ul class="navbar__dropdown" id="navDropdown" role="menu">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
+        <li role="none"><a href="whats-available.html" role="menuitem">What's Available?</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+      </ul>
+    </nav>
+
+<!-- ─────────────────────────────────────────────────── SCRIPT ──────────────────────────────────────────────────── -->
+
+    <script>
+      const btn = document.getElementById("hamburgerBtn");
+      const dropdown = document.getElementById("navDropdown");
+
+      btn.addEventListener("click", () => {
+        const isOpen = btn.classList.toggle("is-open");
+        dropdown.classList.toggle("is-open", isOpen);
+        btn.setAttribute("aria-expanded", isOpen);
+      });
+
+      dropdown.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          btn.classList.remove("is-open");
+          dropdown.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+          btn.classList.remove("is-open");
+          dropdown.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+    
+<!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
+
+    <main class="contact-wrapper">
+
+       <!---------- PAGE HEADING ---------->
+  
+      <h1 class="page-heading">Contact Us</h1>
+
+       <!---------- CONTACT BOX ---------->
+      
+      <div class="contact-box">
+
+         <!---------- PHONE NUMBER ---------->
+        
+        <p class="phone-number">
+
+           <!---------- PHONE ICON ---------->
+          
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+                   A19.5 19.5 0 0 1 3.07 11.5a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 2
+                   1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45
+                   2.11L6.91 8.91a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1
+                   2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16z"/>
+          </svg>
+          065 867 6341
+        </p>
+
+         <!---------- WHATSAPP ---------->
+        
+        <a href="https://wa.me/27658676341?text=Hi,%20I%20found%20Heartful%20Hound%20online%20and%20would%20like%20to%20enquire%20about%20dog%20behaviour/training." target="_blank" rel="noopener noreferrer"
+           class="contact-btn btn-whatsapp">
+        
+           <!---------- WHATSAPP ICON ---------->
+          
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148
+                   -.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075
+                   -.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059
+                   -.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521
+                   .149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52
+                   -.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51
+                   a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372
+                   -.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213
+                   3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489
+                   1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719
+                   2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198
+                   -.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l
+                   -.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1
+                   -1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0
+                   5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003
+                   5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0
+                   0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142
+                   1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683
+                   1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821
+                   0 0 0-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
+
+         <!---------- EMAIL ---------->
+        
+        <a href="mailto:heartfulhound@gmail.com?subject=Dog%20Behaviour/Training%20Enquiry&body=Hi,%20I%20found%20Heartful%20Hound%20online%20and%20would%20like%20to%20enquire%20about%20dog%20behaviour/training." class="contact-btn btn-email">
+  
+      
+           <!---------- EMAIL ICON ---------->
+          
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+          Email
+        </a>
+
+         <!---------- DIVIDER ---------->
+        
+        <div style="width:60%;height:1px;background:#e0e0e0;margin:0.3rem 0;"></div>
+
+         <!---------- GET SOCIAL ---------->
+        
+        <h2 class="social-heading">Get Social</h2>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com/heartfulhound" target="_blank" rel="noopener noreferrer"
+            class="social-link" aria-label="Follow us on Facebook">
+          
+             <!---------- FACEBOOK LOGO ---------->
+            
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="40" height="40" rx="8" fill="#1877F2"/>
+              <path d="M27 20H22.5V32H17.5V20H14V15.5H17.5V13C17.5 9.96 19.21 8
+                     22 8C23.33 8 25 8.25 25 8.25V11.5H23.22C21.67 11.5 21.5 12.3
+                     21.5 13.25V15.5H25.5L24.89 20H21.5V32H16.5V20H13V15H16.5V13
+                     C16.5 9.13 18.63 7 22.5 7C24.34 7 26 7.25 26 7.25V11H24
+                     C22.34 11 22 11.86 22 13V15H26.5L27 20Z" fill="white"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+       <!---------- COPYRIGHT ---------->
+      
+      <p class="copyright">© 2026 Heartful Hound. All rights reserved.</p>
+
+    </main>
+  </body>
+</html>
