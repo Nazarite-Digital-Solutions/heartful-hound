@@ -127,9 +127,8 @@
 
       .hero-scroll {
         position: absolute;
-        bottom: 5vh;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 8rem;
+        right: 10rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -140,8 +139,8 @@
       }
 
       .hero-scroll-label {
-        font-size: clamp(0.65rem, 1.2vw, 0.8rem);
-        font-weight: 700;
+        font-size: clamp(0.65rem, 1.2vw, 1rem);
+        font-weight: 1000;
         letter-spacing: 0.22em;
         color: white;
         white-space: nowrap;
@@ -347,10 +346,6 @@
         .hero-scroll-label {
           font-size: 0.7rem;
         }
-        
-        .hero-scroll {
-          bottom: 4rem;
-        }
 
         .aboutsection1 {
           padding: 6vh 5vw;
@@ -392,10 +387,6 @@
           width: 100%;
           padding-right: 0;
           margin-top: 0.8rem;
-        }
-
-        .hero-scroll {
-          bottom: 3.5rem;
         }
 
         .hero-scroll-label {
@@ -604,6 +595,10 @@
       /* ---------- 700px ---------- */
       
       @media (max-width: 700px) {
+        .hero-scroll {
+          right: 1rem;
+        }
+        
         .partnership-boxes {
           flex-direction: column;
           width: 100%;
@@ -639,6 +634,10 @@
       /* ---------- 468px ---------- */
       
       @media (max-width: 468px) {
+        .hero-scroll {
+          right: 1rem;
+        }
+        
         .aboutsection2-wrapper {
           padding-left: 4%;
           padding-right: 4%;
