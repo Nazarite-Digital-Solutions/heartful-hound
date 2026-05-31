@@ -91,6 +91,7 @@ html, body {
   position: relative;
   z-index: 1100;
   flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
 }
 
 .navbar__hamburger .bar {
@@ -184,6 +185,12 @@ html, body {
 @media (hover: none) {
   .navbar__dropdown a:hover {
     background: transparent;
+  }
+}
+
+@media (hover: hover) {
+  .navbar__hamburger:hover .bar {
+    background-color: white;
   }
 }
 
