@@ -22,7 +22,6 @@
     <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg">
     <link rel="preload" as="image" href="hero-page-background.webp">
     <link rel="preload" as="image" href="heartful-hound-logo.webp">
-    <link rel="stylesheet" href="header-css.css">
     
     <script type="application/ld+json">
       {
@@ -44,6 +43,7 @@
       }
       
       :root {
+        --nav-height: 80px;
         --left-box-width: 63%;
         --right-box-width: 37%;
         --box-height: 97vh;
@@ -56,12 +56,268 @@
       
       html, body {
         overflow-x: hidden;
+      
       }
 
       body {
-        font-family: "Times New Roman", Times, sans-serif;
+        min-height: 100vh;
+      }
+      
+/* ────────────────────────────────────────────────── HEADER CSS ──────────────────────────────────────────────────── */
+
+      /* ---------- NAVBAR ---------- */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 5rem;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3vw;
+        width: 100%;
       }
 
+      /* ---------- THIN GLASS LINE AT BOTTOM OF HEADER ---------- */
+
+      .navbar::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 3vw;
+        width: calc(100% - 6vw);
+        height: 1px;
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      /* ---------- LOGO ---------- */
+
+      .hh-navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .hh-navbar-logo-img {
+        width: 10rem;
+      }
+
+      .hh-navbar-logo-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ---------- HAMBURGER ---------- */
+
+      .hh-navbar-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 2.8rem;
+        height: 2.8rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0.4rem;
+        position: relative;
+        z-index: 1100;
+        flex-shrink: 0;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .hh-navbar-hamburger .bar {
+        display: block;
+        width: 1.75rem;
+        height: 2.5px;
+        background-color:black;
+        border-radius: 2px;
+        transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                    opacity   0.25s ease,
+                    background-color 0.25s ease;
+        transform-origin: center;
+      }
+
+      .hh-navbar-hamburger.is-open .bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+        background-color: black;
+      }
+
+      .hh-navbar-hamburger.is-open .bar:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .hh-navbar-hamburger.is-open .bar:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+        background-color: black;
+      }
+
+      /* ---------- HAMBURGER DROP DOWN MENU ---------- */
+
+      .hh-navbar-dropdown {
+        position: absolute;
+        top: 5rem;
+        right: 3vw;
+        width: min(22rem, 90vw);
+        background: black;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-0.75rem) scale(0.97);
+        transform-origin: top right;
+        transition: opacity  0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                    transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .hh-navbar-dropdown.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+        transition: opacity  0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                    transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .hh-navbar-dropdown li {
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+
+      .hh-navbar-dropdown li:last-child {
+        border-bottom: none;
+      }
+
+      .hh-navbar-dropdown a {
+        display: block;
+        padding: 1.1rem 1.6rem;
+        font-family: 'Times New Roman', Times, sans-serif;
+        font-size: 1.05rem;
+        font-style: italic;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        transition: background 0.18s ease, padding-left 0.18s ease;
+      }
+
+      .hh-navbar-dropdown a:focus-visible {
+        outline: 2px solid white;
+        outline-offset: 3px;
+      }
+
+      /* ---------- HOVER ONLY ON DESKTOP ---------- */
+
+      @media (min-width: 1025px) {
+        .hh-navbar-dropdown a:hover {
+          background: rgba(255, 255, 255, 0.12);
+          padding-left: 2rem;
+        }
+      }
+
+      @media (hover: none) {
+        .hh-navbar-dropdown a:hover {
+          background: transparent;
+        }
+      }
+
+      @media (hover: hover) {
+        .hh-navbar-hamburger:hover .bar {
+          background-color: white;
+        }
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 1024px ---------- */    
+
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 0 4vw;
+        }
+
+        .hh-navbar-dropdown {
+          right: 4vw;
+          width: min(20rem, 88vw);
+        }
+
+        .hh-navbar-dropdown a:hover {
+          padding-left: 1.6rem;
+        }
+      }
+
+      /* ---------- 700px ---------- */
+
+      @media (max-width: 700px) {
+        .navbar {
+          padding: 0 5vw;
+        }
+
+        .hh-navbar-logo-img {
+          width: 8rem;
+          height: 2.5rem;
+        }
+
+        .hh-navbar-dropdown {
+          right: 5vw;
+          width: min(18rem, 90vw);
+        }
+
+        .hh-navbar-dropdown a {
+          font-size: 1rem;
+          padding: 1rem 1.4rem;
+        }
+
+        .hh-navbar-dropdown a:hover {
+          padding-left: 1.4rem;
+        }
+      }
+
+      /* ---------- 468px ---------- */
+
+      @media (max-width: 468px) {
+        .navbar {
+          padding: 0 5.5vw;
+        }
+
+        .hh-navbar-logo-img {
+          width: 6rem;
+          height: 2.2rem;
+        }
+
+        .hh-navbar-hamburger {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+
+        .hh-navbar-hamburger .bar {
+          width: 1.5rem;
+        }
+
+        .hh-navbar-dropdown {
+          right: 5.5vw;
+          width: 90vw;
+          border-radius: 0.6rem;
+        }
+
+        .hh-navbar-dropdown a {
+          font-size: 0.95rem;
+          padding: 0.95rem 1.2rem;
+        }
+
+        .hh-navbar-dropdown a:hover {
+          padding-left: 1.2rem;
+        }
+      }
+      
 /* ─────────────────────────────────────────────────── HERO PAGE ──────────────────────────────────────────────────── */
 
       .hero {
@@ -72,7 +328,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 30vh 8vw 0;
+        padding: 12rem 8vw 5rem 8vw;
         overflow: hidden;
         background-color: #517A98;
       }
@@ -725,7 +981,7 @@
       <!-- HAMBURGER -->
 
       <button
-        class="navbar__hamburger"
+        class="hh-navbar-hamburger"
         id="hamburgerBtn"
         aria-expanded="false"
         aria-controls="navDropdown"
@@ -737,7 +993,7 @@
 
       <!-- HAMBURGER DROP DOWN LINKS -->
       
-      <ul class="navbar__dropdown" id="navDropdown">
+      <ul class="hh-navbar-dropdown" id="navDropdown">
         <li role="none"><a href="index.html" role="menuitem">Home</a></li>
         <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
         <li role="none"><a href="whats-available.html" role="menuitem">What's Available?</a></li>
