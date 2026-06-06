@@ -36,26 +36,12 @@
     
     <style>
       *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-      
-      :root {
-        --left-box-width: 63%;
-        --right-box-width: 37%;
-        --box-height: 97vh;
-      }
 
-      html {
-        scroll-behavior: smooth;
-        
-      }
+      html { scroll-behavior: smooth; }
       
-      html, body {
-        overflow-x: hidden;
-      
-      }
+      html, body { overflow-x: hidden; }
 
-      body {
-        min-height: 100vh;
-      }
+      body { min-height: 100vh; }
       
 /* ────────────────────────────────────────────────── HEADER CSS ──────────────────────────────────────────────────── */
 
@@ -494,7 +480,7 @@
       /* ---------- LEFT BOX ---------- */
       
       .aboutsection1-leftbox {
-        width: var(--left-box-width);
+        width: 63%;
         background: white;
         height: auto;
         border-radius: 0.5rem;
@@ -531,7 +517,7 @@
       /* ---------- RIGHT BOX ---------- */
 
       .aboutsection1-rightbox {
-        width: var(--right-box-width);
+        width: 37%;
         border-radius: 0.5rem;
         height: auto;
         overflow: hidden;
