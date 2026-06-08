@@ -23,27 +23,13 @@
     <link rel="stylesheet" href="header-css.css">
   
     <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      html {
-        font-size: 16px;
-      }
-
-      body {
-        font-family: 'Times New Roman', Times, serif;
-        background-color: #E6B8AD;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
+      body { font-family: 'Times New Roman', Times, serif; background-color: #E6B8AD; min-height: 100vh; display: flex; flex-direction: column; }
 
       /* ---------- CONTACT PAGE CONTENTS ---------- */
       
-      .contact-wrapper {
+      .contact-page-wrapper {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -54,7 +40,7 @@
 
       /* ---------- CONTACT PAGE HEADING ---------- */
       
-      .page-heading {
+      .contact-page-heading {
         font-size: 2.8rem;
         font-weight: 700;
         font-style: italic;
@@ -85,7 +71,7 @@
         color: black;
       }
 
-      .contact-btn {
+      .contact-buttons {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -106,34 +92,30 @@
 
       /* ---------- WHATSAPP BUTTON ---------- */
       
-      .btn-whatsapp {
+      .whatsapp-button {
         border: 2px solid #25D366;
         font-weight: 700;
         font-size: 1.2rem;
       }
+      
+      .whatsapp-button:hover {
+        background: #25D366;
+        color: white;
+        transform: translateY(-4px);
+      }
 
       /* ---------- EMAIL BUTTON ---------- */
       
-      .btn-email {
+      .email-button {
         border: 2px solid #6F6F6F;
         font-weight: 700;
         font-size: 1.2rem;
       }
-
-      /* ---------- HOVER EFFECTS ONLY ON DESKTOP ---------- */
-        
-      @media (hover: hover) and (pointer: fine) {
-        .btn-whatsapp:hover {
-          background: #25D366;
-          color: white;
-          transform: translateY(-4px);
-        }
-
-        .btn-email:hover {
-          background: #6F6F6F;
-          color: white;
-          transform: translateY(-4px);
-        }
+      
+      .email-button:hover {
+        background: #6F6F6F;
+        color: white;
+        transform: translateY(-4px);
       }
 
       /* ---------- GET SOCIAL SECTION ---------- */
@@ -168,17 +150,15 @@
         text-decoration: none;
         transition: transform 0.18s ease, box-shadow 0.18s ease;
       }
+      
+      .social-link:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 60px rgba(24, 119, 242, 0.9);
+      }
 
       .social-link svg {
         width: 2.8rem;
         height: 2.8rem;
-      }
-
-      @media (hover: hover) and (pointer: fine) {
-        .social-link:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 0 60px rgba(24, 119, 242, 0.9);
-        }
       }
 
       /* ---------- COPYRIGHT ---------- */
@@ -200,28 +180,10 @@
 
 /* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
 
-      /* ---------- 1024px ---------- */
-      
-      @media screen and (max-width: 1024px) {
-        .page-heading {
-          font-size: 2rem;
-        }
-
-        .contact-box {
-          max-width: 480px;
-          padding: 2.2rem 1.8rem 1.8rem;
-        }
-
-        .contact-btn {
-          width: 85%;
-          font-size: 0.98rem;
-        }
-      }
-
       /* ---------- 700px ---------- */
       
       @media screen and (max-width: 700px) {
-        .page-heading {
+        .contact-page-heading {
           font-size: 2.2rem;
           letter-spacing: 0.08em;
         }
@@ -232,22 +194,21 @@
           gap: 1rem;
         }
 
-        .contact-btn {
+        .contact-buttons {
           width: 90%;
           font-size: 1.1rem;
           padding: 0.7rem 1.1rem;
           transition: none;
         }
 
-        .btn-whatsapp:hover,
-        .btn-email:hover {
+        .whatsapp-button:hover,
+        .email-button:hover {
           background: white !important;
           color: black !important;
           transform: none !important;
-          box-shadow: none !important;
         }
       
-        .contact-btn:hover {
+        .contact-buttons:hover {
           background: white !important;
           color: black !important;
           transform: none !important;
@@ -271,12 +232,12 @@
       /* ---------- 468px ---------- */
       
       @media screen and (max-width: 468px) {
-        .contact-wrapper {
+        .contact-page-wrapper {
           padding: 0.8rem 4vw 2rem;
           padding-top: 5rem;
         }
 
-        .page-heading {
+        .contact-page-heading {
           font-size: 1.9rem;
           letter-spacing: 0.05em;
           margin-bottom: 1.2rem;
@@ -288,23 +249,21 @@
           gap: 0.9rem;
         }
 
-        .contact-btn {
+        .contact-buttons {
           width: 95%;
           font-size: 1.2rem;
           padding: 0.65rem 0.9rem;
           transition: none;
         }
 
-      
-        .btn-whatsapp:hover,
-        .btn-email:hover {
+        .whatsapp-button:hover,
+        .email-button:hover {
           background: white !important;
           color: black !important;
           transform: none !important;
-          box-shadow: none !important;
         }
       
-        .contact-btn:hover {
+        .contact-buttons:hover {
           background: white !important;
           color: black !important;
           transform: none !important;
@@ -402,11 +361,11 @@
     
 <!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
 
-    <main id="contact-page" class="contact-wrapper">
+    <main id="contact-page" class="contact-page-wrapper">
 
        <!-- PAGE HEADING -->
   
-      <h1 class="page-heading">Contact Us</h1>
+      <h1 class="contact-page-heading">Contact Us</h1>
 
        <!-- CONTACT BOX -->
       
@@ -432,7 +391,7 @@
          <!-- WHATSAPP -->
         
         <a href="https://wa.me/27658676341?text=Hi,%20I%20found%20Heartful%20Hound%20online%20and%20would%20like%20to%20enquire%20about%20dog%20behaviour/training." target="_blank" rel="noopener noreferrer"
-           class="contact-btn btn-whatsapp">
+           class="contact-buttons whatsapp-button">
         
            <!-- WHATSAPP ICON -->
           
@@ -463,7 +422,7 @@
 
          <!-- EMAIL -->
         
-        <a href="mailto:heartfulhound@gmail.com?subject=Dog%20Behaviour/Training%20Enquiry&body=Hi,%20I%20found%20Heartful%20Hound%20online%20and%20would%20like%20to%20enquire%20about%20dog%20behaviour/training." class="contact-btn btn-email">
+        <a href="mailto:heartfulhound@gmail.com?subject=Dog%20Behaviour/Training%20Enquiry&body=Hi,%20I%20found%20Heartful%20Hound%20online%20and%20would%20like%20to%20enquire%20about%20dog%20behaviour/training." class="contact-buttons email-button">
   
       
            <!-- EMAIL ICON -->
