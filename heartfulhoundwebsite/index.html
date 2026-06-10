@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Heartful Hound | Dog Behaviour & Training</title>
+    
+    <title>Heartful Hound | Behaviour & Training</title>
     <meta name="description" content="Dog behaviour consultations and positive reinforcement training designed to support emotional wellbeing, reduce stress, and create lasting behavioural change.">
-    <link rel="canonical" href="https://www.heartfulhound.co.za/">
+    <link rel="canonical" href="https://www.heartfulhound.co.za/"> 
     
     <!-- GOOGLE TAG -->
     
@@ -17,6 +17,10 @@
 
       gtag('config', 'G-1KJ67N7D0T');
     </script>
+    
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="Nazarite Digital Solutions">
     
     <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg">
     <link rel="preload" as="image" href="hero-page-background.webp" fetchpriority="high">
@@ -33,18 +37,23 @@
         "addressCountry": "ZA"
       }
     </script>
-    
+  
     <style>
-      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      html { scroll-behavior: smooth; }
-      
-      html, body { overflow-x: hidden; }
+      html { font-family: 'Times New Roman', Times, sans-serif; scroll-behavior: smooth; }
 
-      body { min-height: 100vh; }
-      
 /* ────────────────────────────────────────────────── HEADER CSS ──────────────────────────────────────────────────── */
-
+      
+      header {
+        height: 5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+      }
+      
       /* ---------- NAVBAR ---------- */
 
       .navbar {
@@ -76,7 +85,7 @@
 
       /* ---------- LOGO ---------- */
 
-      .hh-navbar-logo {
+      .navbar-logo {
         display: flex;
         align-items: center;
         gap: 0.75rem;
@@ -84,11 +93,9 @@
         flex-shrink: 0;
       }
 
-      .hh-navbar-logo-img {
-        width: 10rem;
-      }
+      .navbar-logo-img { width: 10rem; }
 
-      .hh-navbar-logo-img img {
+      .navbar-logo-img img {
         width: 100%;
         height: auto;
         display: block;
@@ -96,7 +103,7 @@
 
       /* ---------- HAMBURGER ---------- */
 
-      .hh-navbar-hamburger {
+      .navbar-hamburger {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -114,7 +121,7 @@
         transition: background 0.2s, color 0.2s;
       }
 
-      .hh-navbar-hamburger .bar {
+      .navbar-hamburger .bar {
         display: block;
         width: 1.75rem;
         height: 2.5px;
@@ -125,25 +132,27 @@
                     background-color 0.25s ease;
         transform-origin: center;
       }
+      
+      .navbar-hamburger:hover .bar { background-color: white; }
 
-      .hh-navbar-hamburger.is-open .bar:nth-child(1) {
+      .navbar-hamburger.is-open .bar:nth-child(1) {
         transform: translateY(0.5rem) rotate(45deg);
         background-color: black;
       }
 
-      .hh-navbar-hamburger.is-open .bar:nth-child(2) {
+      .navbar-hamburger.is-open .bar:nth-child(2) {
         opacity: 0;
         transform: scaleX(0);
       }
 
-      .hh-navbar-hamburger.is-open .bar:nth-child(3) {
+      .navbar-hamburger.is-open .bar:nth-child(3) {
         transform: translateY(-8.5px) rotate(-45deg);
         background-color: black;
       }
 
       /* ---------- HAMBURGER DROP DOWN MENU ---------- */
 
-      .hh-navbar-dropdown {
+      .navbar-dropdown {
         position: absolute;
         top: 5rem;
         right: 3vw;
@@ -161,7 +170,7 @@
                     transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
       }
 
-      .hh-navbar-dropdown.is-open {
+      .navbar-dropdown.is-open {
         opacity: 1;
         visibility: visible;
         transform: translateY(0) scale(1);
@@ -169,18 +178,13 @@
                     transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
       }
 
-      .hh-navbar-dropdown li {
-        border-bottom: 1px solid rgba(255,255,255,0.07);
-      }
+      .navbar-dropdown li { border-bottom: 1px solid rgba(255,255,255,0.07); }
 
-      .hh-navbar-dropdown li:last-child {
-        border-bottom: none;
-      }
+      .navbar-dropdown li:last-child { border-bottom: none; }
 
-      .hh-navbar-dropdown a {
+      .navbar-dropdown a {
         display: block;
         padding: 1.1rem 1.6rem;
-        font-family: 'Times New Roman', Times, sans-serif;
         font-size: 1.05rem;
         font-style: italic;
         color: white;
@@ -188,250 +192,150 @@
         letter-spacing: 0.03em;
         transition: background 0.18s ease, padding-left 0.18s ease;
       }
+      
+      .navbar-dropdown a:hover {
+        background: rgba(255, 255, 255, 0.12);
+        padding-left: 2rem;
+      }
 
-      .hh-navbar-dropdown a:focus-visible {
+      .navbar-dropdown a:focus-visible {
         outline: 2px solid white;
         outline-offset: 3px;
       }
 
-      /* ---------- HOVER ONLY ON DESKTOP ---------- */
-
-      @media (min-width: 1025px) {
-        .hh-navbar-dropdown a:hover {
-          background: rgba(255, 255, 255, 0.12);
-          padding-left: 2rem;
-        }
-      }
-
-      @media (hover: none) {
-        .hh-navbar-dropdown a:hover {
-          background: transparent;
-        }
-      }
-
-      @media (hover: hover) {
-        .hh-navbar-hamburger:hover .bar {
-          background-color: white;
-        }
-      }
-
 /* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
-
-      /* ---------- 1024px ---------- */    
-
-      @media (max-width: 1024px) {
-        .navbar {
-          padding: 0 4vw;
-        }
-
-        .hh-navbar-dropdown {
-          right: 4vw;
-          width: min(20rem, 88vw);
-        }
-
-        .hh-navbar-dropdown a:hover {
-          padding-left: 1.6rem;
-        }
-      }
 
       /* ---------- 700px ---------- */
 
       @media (max-width: 700px) {
-        .navbar {
-          padding: 0 5vw;
-        }
+        .navbar { padding: 0 5vw; }
 
-        .hh-navbar-logo-img {
+        .navbar-logo-img {
           width: 8rem;
           height: 2.5rem;
         }
 
-        .hh-navbar-dropdown {
+        .navbar-dropdown {
           right: 5vw;
           width: min(18rem, 90vw);
         }
 
-        .hh-navbar-dropdown a {
+        .navbar-dropdown a {
           font-size: 1rem;
           padding: 1rem 1.4rem;
         }
 
-        .hh-navbar-dropdown a:hover {
-          padding-left: 1.4rem;
+        .navbar-dropdown a:hover {
+          padding: 1rem 1.4rem;
+          background: black;
         }
+        
+        .navbar-hamburger:hover .bar { background-color: black; }
       }
 
-      /* ---------- 468px ---------- */
+      /* ---------- 430px ---------- */
 
-      @media (max-width: 468px) {
-        .navbar {
-          padding: 0 5.5vw;
-        }
+      @media (max-width: 430px) {
+        .navbar { padding: 0 5.5vw; }
 
-        .hh-navbar-logo-img {
+        .navbar-logo-img {
           width: 6rem;
           height: 2.2rem;
         }
 
-        .hh-navbar-hamburger {
+        .navbar-hamburger {
           width: 2.4rem;
           height: 2.4rem;
         }
 
-        .hh-navbar-hamburger .bar {
-          width: 1.5rem;
-        }
+        .navbar-hamburger .bar { width: 1.5rem; }
 
-        .hh-navbar-dropdown {
+        .navbar-dropdown {
           right: 5.5vw;
           width: 90vw;
           border-radius: 0.6rem;
         }
 
-        .hh-navbar-dropdown a {
+        .navbar-dropdown a {
           font-size: 0.95rem;
           padding: 0.95rem 1.2rem;
         }
 
-        .hh-navbar-dropdown a:hover {
-          padding-left: 1.2rem;
+        .navbar-dropdown a:hover {
+          padding: 0.95rem 1.2rem;
+          background: black;
         }
+        
+        .navbar-hamburger:hover .bar { background-color: black; }
       }
-      
+
 /* ─────────────────────────────────────────────────── HERO PAGE ──────────────────────────────────────────────────── */
-
-      .hero {
+      
+      #hero {
         position: relative;
         width: 100%;
+        height: 100vh;
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 12rem 8vw 5rem 8vw;
         overflow: hidden;
-        background-color: #517A98;
+        background-image: url("hero-page-background.png");
+        background-image: image-set(
+          url("hero-page-background.webp") type("image/webp"),
+          url("hero-page-background.png") type("image/png")
+        );
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
       }
-      
-      .hero-page-background {
+
+      .hero-content {
         position: absolute;
-        inset: 0;
-        z-index: 0;
-      }
-      
-      .hero-page-background-image {
+        top: 12rem;
+        left: 0;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+        padding: 0 4vw;
       }
+
+      /* ---------- WELCOME TO ---------- */
       
-       .hero-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* ---------- HERO PAGE WELCOME TO HEADING ---------- */
-
-      .hero-welcome {
-        font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-        font-weight: 700;
-        font-style: italic;
+      .welcome-to {
+        display: block;
         color: white;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 1.8rem;
         letter-spacing: 0.08em;
-        margin-bottom: 0.5rem;
-        opacity: 0;
+        text-align: left;
+        margin-bottom: 0.4rem;
         animation: fadeUp 0.8s ease forwards;
       }
 
-      /* ---------- HERO PAGE HEARTFUL HOUND COPNAY HEADING ---------- */
-
-      .hero-title {
-        font-size: clamp(2rem, 8vw, 7rem);
-        font-weight: 700;
-        font-style: normal;
+      /* ---------- HEARTFUL HOUND ---------- */
+      
+      .heartful-hound {
+        display: block;
         color: white;
+        font-weight: 700;
+        font-size: 7rem;
         letter-spacing: 0.06em;
-        line-height: 1;
-        width: 100%;
         text-align: center;
-        opacity: 0;
+        line-height: 1.05;
+        margin-bottom: 0.5rem;
         animation: fadeUp 0.8s ease forwards;
       }
 
-      /* ---------- HERO PAGE TAG LINE ---------- */
-
-      .hero-tagline {
-        font-size: clamp(1.6rem, 2vw, 1.8rem);
-        font-weight: 700;
-        font-style: italic;
+      /* ---------- BEHAVIOUR & TRAINING ---------- */
+      
+      .behaviour-training {
+        display: block;
         color: white;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 2.8rem;
         letter-spacing: 0.1em;
-        width: 100%;
-        padding-right: 6rem;
-        text-align: right;
-        margin-top: 1rem;
-        opacity: 0;
+        text-align: center;
         animation: fadeUp 0.8s ease forwards;
       }
       
-      .and-traing-font-black {
-        color: black;
-      }
-
-      /* ---------- HERO PAGE SCROLL DOWN INDICATOR ---------- */
-
-      .hero-scroll {
-        position: absolute;
-        bottom: 8rem;
-        right: 10rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.4rem;
-        text-decoration: none;
-        opacity: 0;
-        animation: fadeUp 0.8s ease forwards;
-      }
-
-      .hero-scroll-label {
-        font-size: clamp(0.65rem, 1.2vw, 1rem);
-        font-weight: 1000;
-        letter-spacing: 0.22em;
-        color: white;
-        white-space: nowrap;
-      }
-
-      .hero-scroll-arrow {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        animation: bounce 1.8s ease-in-out infinite;
-      }
-
-      .hero-scroll-arrow::after {
-        content: "";
-        display: block;
-        width: 0.75rem;
-        height: 0.75rem;
-        border-right: 2.5px solid white;
-        border-bottom: 2.5px solid white;
-        transform: rotate(45deg);
-        margin-top: 0.15rem;
-      }
-
-      .hero-scroll-arrow::before {
-        content: "";
-        display: block;
-        width: 0.75rem;
-        height: 0.75rem;
-        border-right: 2.5px solid white;
-        border-bottom: 2.5px solid white;
-        transform: rotate(45deg);
-      }
-
-      /* ---------- KEYFRAMES ---------- */
-
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -443,718 +347,529 @@
         }
       }
 
-      @keyframes bounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(8px);
-        }
+      /* ---------- HERO PAGE SCROLL DOWN INDICATOR ---------- */
+      
+      .scroll-indicator {
+        position: absolute;
+        right: 4vw;
+        bottom: 4vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        gap: 0.3rem;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .scroll-label {
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .chevrons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.15rem;
+        animation: bounce-chevrons 1.8s ease-in-out infinite;
+      }
+
+      .chevron {
+        display: block;
+        width: 0.75rem;
+        height: 0.75rem;
+        border-right: 2.5px solid white;
+        border-bottom: 2.5px solid white;
+        transform: rotate(45deg);
+      }
+
+      @keyframes bounce-chevrons {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(6px); }
       }
 
 /* ────────────────────────────────────────────────── ABOUT PAGE ──────────────────────────────────────────────────── */
-
-      .aboutsection1 {
+      
+      #about {
         background-color: #E6B8AD;
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 15vh 6vw 8vh;
-        flex-direction: column;
-        padding-bottom: 0.5rem;
+        padding-top: 5rem;
+        padding-bottom: 1.5rem;
       }
 
-      /* ---------- WRAPPER TO HOLD BOXES NEXT TO EACH OTHER ---------- */
-    
-      .aboutsection1-boxes {
+      .about-page-wrapper {
+        width: 92%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      /* ---------- ABOUT BOX AND IMAGE ---------- */
+      
+      .about-top-boxes {
         display: flex;
-        flex-direction: row;
         align-items: stretch;
         gap: 2vw;
-        width: 100%;
+        margin-bottom: 3.5rem;
       }
 
-      /* ---------- LEFT BOX ---------- */
-      
-      .aboutsection1-leftbox {
+      .about-box {
         width: 63%;
+        flex-shrink: 0;
         background: white;
-        height: auto;
         border-radius: 0.5rem;
-        padding: 1rem 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        line-height: 1.6;
-        overflow: auto;
-        flex-shrink: 0;
         border: 2px solid #6F6F6F;
+        padding: 2rem 2.2rem;
       }
 
-      .aboutsection1-heading {
-        font-size: clamp(1.4rem, 2.3vw, 2.2rem);
-        font-weight: 700;
+      .about-heading {
         font-style: italic;
-        color: #D78D7C;
+        font-weight: 700;
+        font-size: 2.2rem;
         letter-spacing: 0.1em;
-        margin-bottom: 1.1rem;
-        flex-shrink: 0;
-      }
-
-      .aboutsection1-text {
-        margin: 0;
-        padding-bottom: 0;
-        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-        line-height: 1.6;
-        color: #1a1a1a;
+        color: #D78D7C;
         text-align: left;
-        display: block;
+        margin-bottom: 1.2rem;
       }
 
-      /* ---------- RIGHT BOX ---------- */
+      .about-text {
+        color: black;
+        font-size: 1.1rem;
+        line-height: 1.75;
+        font-family: 'Times New Roman', Times, sans-serif;
+      }
 
-      .aboutsection1-rightbox {
+      .about-text p + p { margin-top: 1rem; }
+
+      .about-image-wrap {
         width: 37%;
-        border-radius: 0.5rem;
-        height: auto;
-        overflow: hidden;
         flex-shrink: 0;
-        position: relative;
-        aspect-ratio: 4 / 5;
       }
 
-      /* ---------- RIGHT IMAGE ---------- */
-
-      .aboutsection1-img {
+      .about-image-wrap picture,
+      .about-image-wrap img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
-        overflow: hidden;
-      }
-      
-
-/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
-
-      @media (hover: none) {
-        .aboutsection1-leftbox:hover,
-        .aboutsection1-rightbox:hover {
-          transform: none;
-        }
-      }
-      
-      /* ---------- 1024px ---------- */
-
-      @media (max-width: 1024px) {
-        .hero {
-          padding: 25vh 7vw 0;
-        }
-
-        .hero-title {
-          width: 100%;
-        }
-
-        .hero-tagline {
-          width: 100%;
-        }
-
-        .aboutsection1 {
-          padding: 7vh 6vw;
-        }
-
-        .aboutsection1-boxes {
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
-        }
-
-        .aboutsection1-leftbox {
-          width: 90%;
-          height: auto;
-          min-height: 18rem;
-        }
-
-        .aboutsection1-rightbox {
-          width: 90%;
-          height: 50vw;
-        }
-      }
-
-      /* ---------- 700px ---------- */
-
-      @media (max-width: 700px) {
-        .hero {
-          padding: 25vh 6vw 0;
-        }
-
-        .hero-title {
-          width: 100%;
-        }
-
-        .hero-tagline {
-          width: 100%;
-          padding-right: 0;
-        }
-
-        .hero-scroll-label {
-          font-size: 0.7rem;
-        }
-
-        .aboutsection1 {
-          padding: 6vh 5vw;
-          padding-top: 12.5vh;
-        }
-
-        .aboutsection1-leftbox {
-          width: 95%;
-          padding: 2rem 1.5rem;
-        }
-
-        .aboutsection1-rightbox {
-          width: 95%;
-          height: 55vw;
-        }
-
-        .aboutsection1-heading {
-          font-size: 1.5rem;
-        }
-      }
-
-      /* ---------- 480px ---------- */
-
-      @media (max-width: 468px) {
-        .hero {
-          padding: 25vh 5vw 0;
-        }
-
-        .hero-welcome {
-          letter-spacing: 0.05em;
-        }
-
-        .hero-title {
-          width: 100%;
-          letter-spacing: 0.03em;
-        }
-
-        .hero-tagline {
-          width: 100%;
-          padding-right: 0;
-          margin-top: 0.8rem;
-        }
-
-        .hero-scroll-label {
-          font-size: 0.62rem;
-          letter-spacing: 0.18em;
-        }
-
-        .aboutsection1 {
-          padding: 5vh 4vw;
-          min-height: auto;
-          padding-top: 12.5vh;
-        }
-
-        .aboutsection1-leftbox {
-          width: 100%;
-          padding: 1.75rem 1.25rem;
-        }
-
-        .aboutsection1-rightbox {
-          width: 100%;
-          height: 65vw;
-        }
-
-        .aboutsection1-heading {
-          font-size: 1.3rem;
-          margin-bottom: 1rem;
-        }
-
-        .aboutsection1-text {
-          font-size: 0.9rem;
-        }
-      }
-      
-/* ────────────────────────────────────────────── ABOUT SECTION 2 CSS ─────────────────────────────────────────────── */
-    
-      /* ---------- ABOUT SECTION 2 PAGE ---------- */
-      
-      .aboutsection2-wrapper {
-        padding-top: 0.3rem;
-        padding-bottom: 1.5rem;
-        padding-left: 5%;
-        padding-right: 5%;
-        max-width: 100vw;
-        background-color: #E6B8AD;
+        border-radius: 0.5rem;
       }
 
       /* ---------- PARTNERSHIP HEADING ---------- */
-      
+    
       .partnerships-heading {
-        text-align: center;
-        font-size: 2.2rem;
+        color: black;
         font-weight: 700;
+        font-size: 2.2rem;
         letter-spacing: 0.04em;
-        margin-top: 1rem;
-        margin-bottom: 1em;
+        text-align: center;
+        margin-bottom: 2rem;
       }
 
       /* ---------- PARTNERSHIP BOXES ---------- */
-      
+    
       .partnership-boxes {
         display: flex;
+        justify-content: center;
         gap: 1.5rem;
-        width: 100%;
+        margin-bottom: 2.5rem;
       }
 
-      .partnership-card {
-        flex: 1;
-        border: 2px solid #6F6F6F;
-        background-color: white;
-        border-radius: 0.5rem;
+      .partnership-box {
         display: flex;
-        flex-direction: row;
         align-items: stretch;
+        width: 40%;
+        min-height: 12rem;
+        border: 2px solid #6F6F6F;
+        border-radius: 0.3rem;
+        text-decoration: none;
         overflow: hidden;
-        height: 12rem; 
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        background: white;
       }
       
-      .partnership-card:hover {
-        box-shadow: 0 4px 0 4px black;
+      .partnership-box:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 0 4px #000000;
       }
 
-      .partnership-imagesbox {
+      .partnership-logo-wrap {
         width: 40%;
-        height: 12rem;
-        background-color: #6F6F6F;;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-      }
-      
-      .partnership-boxes-link {
-        text-decoration: none;
-        color: black;
-        font-size: 1.2rem;
-        transition: transform 0.18s ease;
-      }
-      
-      .partnership-boxes-link:hover {
-        transform: translateY(-4px);
-      }
-    
-      .partnership-imagesbox picture {
-        width: 100%;
-        height: 100%;
-        display: block;
+        padding: 1rem;
+        background: #6F6F6F
       }
 
-      .partnership-img  {
-        width: 100%;
-        height: 100%;
+      .partnership-logo-wrap picture,
+      .partnership-logo-wrap img {
+        display: block;
+        max-width: 100%;
+        height: auto;
         object-fit: contain;
-        display: block;
-        padding: 0.8rem;
-        object-position: center;
       }
 
-      .partnership-card .aboutsection2card-text {
+      .partnership-text {
         flex: 1;
-        font-size: 1.2rem;
-        padding: 1rem 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .partnership-card .aboutsection2card-text p {
-        font-size: 0.95rem;
-        line-height: 1.65;
-        text-align: left;
-      }
-
-      /* ---------- BUTTONS ---------- */
-      
-      .aboutsection2buttons-row {
-        display: flex;
-        gap: 1.2rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .aboutsection2btn-link {
-        display: inline-block;
-        background-color: #6F6F6F;
+        background: white;
         color: black;
-        font-size: 1.2rem;
-        font-style: italic;
-        text-decoration: none;
+        font-size: 0.95rem;
+        font-family: 'Times New Roman', Times, sans-serif;
+        line-height: 1.6;
+        padding: 1rem 1rem 1rem 0.8rem;
+        text-align: left;
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      /* ---------- ABOUT PAGE BUTTONS ---------- */
+    
+      .about-page-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .about-page-button {
+        display: inline-block;
         padding: 1rem 2rem;
         border-radius: 0.5rem;
+        background-color: #6F6F6F;
+        color: black;
+        font-family: 'Times New Roman', Times, sans-serif;
+        font-size: 1.2rem;
+        font-style: italic;
+        font-weight: 700;
+        text-decoration: none;
+        border: none;
         cursor: pointer;
-        margin-top: 1.8rem;
-        font-weight: bold;
-        transition: transform 0.18s ease;
+        transition: transform 0.2s ease;
       }
-           
+      
+      .about-page-button:hover {
+        transform: translateY(-4px);
+      }
+
       /* ---------- COPYRIGHT ---------- */
       
       .copyright {
-        font-size: 0.8rem;
         color: black;
+        font-size: 0.8rem;
         text-align: center;
-        margin-top: 2rem;
       }
 
 /* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
-
-      /* ---------- 1024px ---------- */
       
-      @media (max-width: 1024px) {
-        .partnership-boxes {
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-          gap: 1.5rem;
-        }
-
-        .partnership-card {
-          width: 100%;
-          max-width: 42rem;
-          height: auto;
-          flex-direction: column;
-        }
-        
-        .partnership-imagesbox {
-          width: 100%;
-          height: 12rem;
-        }
-        
-        .aboutsection2card-text {
-          padding: 1rem;
-        }
-
-        .aboutsection2btn-link:hover {
-          transform: none;
-        }
-      
-        .partnership-card:hover {
-          box-shadow: none;
-        }
-      }
-
       /* ---------- 700px ---------- */
       
       @media (max-width: 700px) {
-        .hero-scroll {
-          right: 1rem;
-        }
+        .hero-content { top: 10rem; }
         
+        .welcome-to { font-size: 1.3rem; }
+        
+        .heartful-hound { font-size: 3.6rem; }
+        
+        .behaviour-training { font-size: 2rem; }
+
+        .scroll-indicator { bottom: 6vh; }
+
+        .about-top-boxes {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .about-box { width: 100%; }
+
+        .about-image-wrap {
+          width: 100%;
+          height: 60vw;
+        }
+
+        .about-image-wrap picture,
+        .about-image-wrap img {
+          height: 100%;
+        }
+
         .partnership-boxes {
           flex-direction: column;
-          width: 100%;
+          align-items: center;
+          gap: 1.2rem;
         }
 
-        .partnership-card:hover {
-          box-shadow: none;
+        .partnership-box {
+          width: 90%;
+          min-height: 10rem;
+        }
+
+        .about-page-buttons {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 1rem;
         }
         
-        .partnership-card {
-          width: 100%;
-          height: auto;
-        }
-
-        .partnership-imagesbox {
-          height: 10rem;
-        }
-
-        .partnerships-heading {
-          font-size: 1.05rem;
-        }
-
-        .aboutsection2btn-link:hover {
+        .about-page-button:hover { transform: none; }
+        
+        .partner-box:hover {
           transform: none;
-        }
-        
-        .partnership-card .aboutsection2card-text {
-          padding: 0.75rem;
-          font-size: 1rem;
+          box-shadow: none;
         }
       }
 
-      /* ---------- 468px ---------- */
+      /* ---------- 430px ---------- */
       
-      @media (max-width: 468px) {
-        .hero-scroll {
-          right: 1rem;
+      @media (max-width: 430px) {
+        .hero-content {
+          top: 8.5rem;
+          padding: 0 5vw;
         }
         
-        .aboutsection2-wrapper {
-          padding-left: 4%;
-          padding-right: 4%;
-        }
+        .welcome-to { font-size: 1rem; }
         
-         .partnership-card {
-          height: auto;
+        .heartful-hound { font-size: 2rem; }
+        
+        .behaviour-training { font-size: 1.3rem; }
+
+        .scroll-indicator {
+          right: 5vw;
+          bottom: 10vh;
         }
 
-        .partnerships-heading {
-          font-size: 1rem;
-        }
-      
-        .partnership-card:hover {
-          box-shadow: none;
-        }
-        
-        .partnership-imagesbox {
-          height: 8rem;
+        #about {
+          padding-top: 4rem;
+          padding-bottom: 3rem;
         }
 
-        .aboutsection2btn-link {
+        .about-page-wrapper { width: 95%; }
+
+        .about-heading { font-size: 1.6rem; }
+
+        .about-text { font-size: 1rem; }
+
+        .partnerships-heading { font-size: 1.3rem; }
+
+        .partnership-box {
+          width: 100%;
+          flex-direction: column;
+          min-height: auto;
+        }
+
+        .partnership-logo-wrap {
+          width: 100%;
+          padding: 1rem 2rem;
+        }
+
+        .partnership-text { padding: 0.8rem 1rem 1rem; }
+
+        .about-page-buttons { gap: 0.8rem; }
+        
+        .about-page-button {
           font-size: 1.05rem;
           padding: 0.6rem 1.3rem;
         }
-
-        .aboutsection2buttons-row {
-          gap: 0.8rem;
-        }
-
-        .aboutsection2btn-link:hover {
-          transform: none;
-        }
         
-        .partnership-card .aboutsection2card-text {
-          padding: 0.6rem;
-          font-size: 0.9rem;
+        .about-page-button:hover { transform: none; }
+        
+         .partner-box:hover {
+          transform: none;
+          box-shadow: none;
         }
       }
-      
-      @media (hover: hover) and (pointer: fine) {
-        .aboutsection2btn-link:hover {
-          transform: translateY(-4px);
-        }
-      }      
     </style>
   </head>
-  
+
 <!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
   
   <body>
     
 <!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
-
-    <nav class="navbar" aria-label="Main navigation">
-      
-      <!-- LOGO -->
-      
-      <a href="index.html" class="hh-navbar-logo">
-        <picture class="hh-navbar-logo-img">
-          <source srcset="heartful-hound-logo.webp" type="image/webp" width="168" height="54">
-          <img src="heartful-hound-logo.png" alt="Heartful Hound logo" width="168" height="54">
-        </picture>
-      </a>
     
-      <!-- HAMBURGER -->
-
-      <button
-        class="hh-navbar-hamburger"
-        id="hamburgerBtn"
-        aria-expanded="false"
-        aria-controls="navDropdown"
-        aria-label="Toggle navigation menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <!-- HAMBURGER DROP DOWN LINKS -->
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
       
-      <ul class="hh-navbar-dropdown" id="navDropdown">
-        <li role="none"><a href="#hero" role="menuitem">Home</a></li>
-        <li role="none"><a href="index.html#about" role="menuitem">About</a></li>
-        <li role="none"><a href="whats-available.html" role="menuitem">What's Available?</a></li>
-        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
-      </ul>
-    </nav>
+        <!-- LOGO -->
+      
+        <a href="#hero" class="navbar-logo">
+          <picture class="navbar-logo-img">
+            <source srcset="heartful-hound-logo.webp" type="image/webp" width="168" height="54">
+            <img src="heartful-hound-logo.png" alt="Heartful Hound logo" width="168" height="54">
+          </picture>
+        </a>
+    
+        <!-- HAMBURGER -->
+
+        <button
+          class="navbar-hamburger"
+          id="hamburgerBtn"
+          aria-expanded="false"
+          aria-controls="navDropdown"
+          aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- HAMBURGER DROP DOWN LINKS -->
+      
+        <ul class="navbar-dropdown" id="navDropdown">
+          <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+          <li role="none"><a href="#about" role="menuitem">About</a></li>
+          <li role="none"><a href="whats-available.html" role="menuitem">What's Available?</a></li>
+          <li role="none"><a href="reviews.html" role="menuitem">Reviews</a></li>
+          <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        </ul>
+      </nav>
 
 <!-- ─────────────────────────────────────────────────── SCRIPT ──────────────────────────────────────────────────── -->
 
-    <script>
-      const btn = document.getElementById("hamburgerBtn");
-      const dropdown = document.getElementById("navDropdown");
+      <script>
+        const btn = document.getElementById("hamburgerBtn");
+        const dropdown = document.getElementById("navDropdown");
 
-      btn.addEventListener("click", () => {
-        const isOpen = btn.classList.toggle("is-open");
-        dropdown.classList.toggle("is-open", isOpen);
-        btn.setAttribute("aria-expanded", isOpen);
-      });
-
-      dropdown.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          btn.classList.remove("is-open");
-          dropdown.classList.remove("is-open");
-          btn.setAttribute("aria-expanded", "false");
+        btn.addEventListener("click", () => {
+          const isOpen = btn.classList.toggle("is-open");
+          dropdown.classList.toggle("is-open", isOpen);
+          btn.setAttribute("aria-expanded", isOpen);
         });
-      });
 
-      document.addEventListener("click", (e) => {
-        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
-          btn.classList.remove("is-open");
-          dropdown.classList.remove("is-open");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-    </script>
+        dropdown.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            btn.classList.remove("is-open");
+            dropdown.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            btn.classList.remove("is-open");
+            dropdown.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </header>
 
 <!-- ───────────────────────────────────────────────── HERO PAGE ─────────────────────────────────────────────────── -->
-
-    <section class="hero" id="hero">
-      
-      <picture class="hero-page-background">
-        <source srcset="hero-page-background.webp" type="image/webp">
-        <img src="hero-page-background.jpg" alt="" class="hero-page-background-image">
-      </picture>
-      
+ 
+    <section id="hero">
       <div class="hero-content">
-      
-        <!-- WELCOME TO -->
-        
-        <h2 class="hero-welcome">Welcome to</h2>
-
-        <!-- HEARTFUL HOUND -->
-
-        <h1 class="hero-title">HEARTFUL HOUND</h1>
-
-        <!-- TAGLINE -->
-
-        <h2 class="hero-tagline">Behaviour  <span class="and-traing-font-black">&amp; Training</span></h2>
+        <span class="welcome-to">Welcome to</span>
+        <span class="heartful-hound">HEARTFUL HOUND</span>
+        <span class="behaviour-training">Behaviour &nbsp;&amp; Training</span>
       </div>
-      
-      <!-- SCROLL INDICATOR -->
 
-      <a href="#about" class="hero-scroll" aria-label="Scroll down to about section">
-        <span class="hero-scroll-label">SCROLL DOWN</span>
-        <span class="hero-scroll-arrow" aria-hidden="true"></span>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
+        <span class="scroll-label">SCROLL DOWN</span>
+        <div class="chevrons">
+          <span class="chevron"></span>
+          <span class="chevron"></span>
+        </div>
       </a>
     </section>
 
-<!-- ────────────────────────────────────────────── ABOUT SECTION 1 ──────────────────────────────────────────────── -->
-
-    <section class="aboutsection1" id="about">
-      <div class="aboutsection1-boxes">
-        
-        <!-- ABOUT BOX -->
-
-        <div class="aboutsection1-leftbox">
-          <h2 class="aboutsection1-heading">About Heartful Hound</h2>
-
-          <p class="aboutsection1-text">
-            Heartful Hound was founded and is owned by Natasha Bradshaw (known to many as Tash or Nats), a qualified
-            behaviour practitioner with a deep passion for animal behaviour and emotional wellbeing. Based in the
-            coastal town of Warner Beach, KZN, Natasha works with companion animals and their guardians to build strong,
-            lasting relationships grounded in trust, understanding, and kindness. With certifications including Cert.CAB, 
-            Dip.(C.A.B.T), C.C.A.B. MHERA certified, and having completed extensive studies through COAPE International, 
-            Natasha remains committed to ongoing education in this ever-evolving field. Her experience includes working 
-            within a veterinary clinic in Johannesburg North, giving her a well-rounded, practical understanding of 
-            animal care and behaviour.<br>
-
-            At the heart of Heartful Hound is a clear mission: to help prevent animals from being surrendered due to
-            behavioural challenges. Many issues that lead to rehoming can be addressed with the right guidance, and
-            Natasha is dedicated to supporting both dogs and their humans before problems reach that point.<br>
-
-            Her approach is rooted in compassion and science. Emotional wellbeing is always prioritised, ensuring that
-            every animal feels safe, supported, and understood throughout the training process. Heartful Hound uses only
-            positive reinforcement methods and does not support or use aversive tools such as choke chains, prong
-            collars, or shock devices. These methods can cause harm and undermine trust—something that should never be
-            compromised.<br>
-            
-            Outside of her professional work, Natasha shares her life with her husband, two sons, and her two beloved 
-            dogs, Jake and Boomer. She understands firsthand both the joy and the challenges that come with living and 
-            working with animals. This perspective brings empathy, realism, and authenticity to every client she works with.
-          </p>
-        </div>
-
-        <!-- ABOUT PAGE RIGHT IMAGE -->
-
-        <div class="aboutsection1-rightbox">
-          <picture>
-            <source srcset="about-page-image.webp" type="image/webp">
-            <img src="about-page-image.jpg" alt="About Heartful Hound Dog Image" class="aboutsection1-img" loading="lazy">
-          </picture>
-        </div>
-      </div>
-
-    </section>
-    
-<!-- ─────────────────────────────────────────────── ABOUT SECTION 2 ─────────────────────────────────────────────── -->
-    
-    <div class="aboutsection2-wrapper">
-
-      <!-- PARTNERSHIP HEADING -->
-    
-      <h2 class="partnerships-heading">Partnerships &amp; Professional Support</h2>
-
-      <!-- PARTNERSHIP BOXES -->
-      
-      <div class="partnership-boxes">
-
-        <!-- PARTNERSHIP BOX 1 -->
-          
-          <a href="https://www.hillspet.co.za" target="_blank" class="partnership-boxes-link" rel="noopener noreferrer">
-            <div class="partnership-card">
-              <div class="partnership-imagesbox">
-                <picture>
-                  <source srcset="hills-logo.webp" type="image/webp">
-                  <img src="hills-logo.png" alt="Hills Company Logo" class="partnership-img">
-                </picture>
-              </div>
-              <div class="aboutsection2card-text">
-                <p>
-                  Heartful Hound is proud to be sponsored by Hills Pet Nutrition as an official Hills Puppy School Affiliate. 
-                  This partnership allows us to support puppies and their guardians with trusted, science-backed nutritional 
-                  guidance alongside behavioural development.
-                </p>
-              </div>
-            </div>
-          </a>
-        
-        <!-- PARTNERSHIP BOX 2 -->
-        
-          <a href="https://www.seadoonevet.co.za" target="_blank" class="partnership-boxes-link" rel="noopener noreferrer">
-            <div class="partnership-card">
-              <div class="partnership-imagesbox">
-                <picture>
-                  <source srcset="seadoone-logo.webp" type="image/webp">
-                  <img src="seadoone-logo.png" alt="Seadoone Veterinary Clinic Logo Image" class="partnership-img">
-                </picture>
-              </div>
-              <div class="aboutsection2card-text">
-                <p>
-                  We are also partnered with Seadoone Veterinary Clinic, ensuring a collaborative approach to your dog’s 
-                  wellbeing. By working closely with veterinary professionals, we are able to support not only behavioural 
-                  needs but also the medical health of your companion—because true wellbeing is a combination of both.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-    <!-- BUTTONS -->
-      
-      <div class="aboutsection2buttons-row">
-        <a href="whats-available.html" class="aboutsection2btn-link">What's Available?</a>
-        <a href="contact.html" class="aboutsection2btn-link">Contact Us</a>
-      </div>
-
-      <!-- COPYRIGHT -->  
-      
-      <p class="copyright">&copy; 2026 Heartful Hound. All rights reserved.</p>
-
-    </div>
+<!-- ───────────────────────────────────────────────── HERO PAGE ─────────────────────────────────────────────────── -->
   
+    <section id="about">
+      <div class="about-page-wrapper">
+
+        <div class="about-top-boxes">
+
+          <div class="about-box">
+            <h2 class="about-heading">About Heartful Hound</h2>
+            <div class="about-text">
+              <p>Heartful Hound was founded and is owned by Natasha Bradshaw (known to many as Tash or Nats), a qualified 
+                behaviour practitioner with a deep passion for animal behaviour and emotional wellbeing. Based in the 
+                coastal town of Warner Beach, KZN, Natasha works with companion animals and their guardians to build strong, 
+                lasting relationships grounded in trust, understanding, and kindness. With certifications including Cert.CAB, 
+                Dip.(C.A.B.T), C.C.A.B. MHERA certified, and having completed extensive studies through COAPE International, 
+                Natasha remains committed to ongoing education in this ever-evolving field. Her experience includes working 
+                within a veterinary clinic in Johannesburg North, giving her a well-rounded, practical understanding of animal 
+                care and behaviour.
+              </p>
+              <p>At the heart of Heartful Hound is a clear mission: to help prevent animals from being surrendered due to 
+                behavioural challenges. Many issues that lead to rehoming can be addressed with the right guidance, and Natasha 
+                is dedicated to supporting both dogs and their humans before problems reach that point.
+              </p>
+              <p>Her approach is rooted in compassion and science. Emotional wellbeing is always prioritised, ensuring that 
+                every animal feels safe, supported, and understood throughout the training process. Heartful Hound uses only 
+                positive reinforcement methods and does not support or use aversive tools such as choke chains, prong collars, 
+                or shock devices. These methods can cause harm and undermine trust—something that should never be compromised.
+              </p>
+              <p>Outside of her professional work, Natasha shares her life with her husband, two sons, and her two beloved dogs, 
+                Jake and Boomer. She understands firsthand both the joy and the challenges that come with living and working 
+                with animals. This perspective brings empathy, realism, and authenticity to every client she works with.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-image-wrap">
+            <picture>
+              <source srcset="about-page-image.webp" type="image/webp" width="900" height="600">
+              <img src="about-page-image.jpg" alt="About Heartful Hound Dog Image" loading="lazy" width="900" height="600">
+            </picture>
+          </div>
+
+        </div>
+
+        <!-- PARTNERSHIPS HEADING -->
+        
+        <h2 class="partnerships-heading">Partnerships &amp; Professional Support</h2>
+
+        <!-- PARTNERSHIP BOXES -->
+        
+        <div class="partnership-boxes">
+
+          <!-- PARTNERSHIP BOX 2 -->
+          
+          <a href="https://www.hillspet.co.za" target="_blank" class="partnership-box">
+            <div class="partnership-logo-wrap">
+              <picture>
+                <source srcset="hills-logo.webp" type="image/webp" width="300" height="210">
+                <img src="hills-logo.png" alt="Hills Company Logo" width="300" height="210">
+              </picture>
+            </div>
+            <p class="partnership-text">Heartful Hound is proud to be sponsored by Hills Pet Nutrition as an official Hills 
+              Puppy School Affiliate. This partnership allows us to support puppies and their guardians with trusted, 
+              science-backed nutritional guidance alongside behavioural development.
+            </p>
+          </a>
+
+          <!-- PARTNERSHIP BOX 2 -->
+          
+          <a href="https://www.seadoonevet.co.za" target="_blank" class="partnership-box">
+            <div class="partnership-logo-wrap">
+              <picture>
+                <source srcset="seadoone-logo.webp" type="image/webp" width="300" height="282">
+                <img src="seadoone-logo.png" alt="Seadoone Veterinary Clinic Logo Image" width="300" height="282">
+              </picture>
+            </div>
+            <p class="partnership-text">We are also partnered with Seadoone Veterinary Clinic, ensuring a collaborative 
+              approach to your dog's wellbeing. By working closely with veterinary professionals, we are able to support 
+              not only behavioural needs but also the medical health of your companion—because true wellbeing is a combination 
+              of both.
+            </p>
+          </a>
+
+        </div>
+
+        <!-- ABOUT PAGE BUTTONS -->
+        
+        <div class="about-page-buttons">
+          <a href="whats-available.html" class="about-page-button">What's Available?</a>
+          <a href="contact.html" class="about-page-button">Contact Us</a>
+        </div>
+
+        <!-- COPYRIGHT -->
+        
+        <p class="copyright">© 2026 Heartful Hound. All rights reserved</p>
+
+      </div>
+    </section>
+
   </body>
 </html>
