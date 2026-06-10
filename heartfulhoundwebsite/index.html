@@ -23,8 +23,8 @@
     <meta name="author" content="Nazarite Digital Solutions">
     
     <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg">
-    <link rel="preload" as="image" href="hero-page-background.webp">
-    <link rel="preload" as="image" href="heartful-hound-logo.webp">
+    <link rel="preload" as="image" href="hero-page-background.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="heartful-hound-logo.webp" fetchpriority="high">
     
     <script type="application/ld+json">
       {
@@ -285,6 +285,7 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        background-color: #365A7C;
       }
 
       .hero-content {
@@ -695,7 +696,7 @@
       
         <a href="#hero" class="navbar-logo">
           <picture class="navbar-logo-img">
-            <source srcset="heartful-hound-logo.webp" type="image/webp" width="168" height="54">
+            <source srcset="heartful-hound-logo.webp" type="image/webp" width="168" height="54" fetchpriority="high">
             <img src="heartful-hound-logo.png" alt="Heartful Hound logo" width="168" height="54">
           </picture>
         </a>
