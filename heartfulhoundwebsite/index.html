@@ -286,7 +286,6 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        background-color: #365A7C;
       }
       
       #hero::before {
@@ -298,11 +297,12 @@
       }
 
       .hero-content {
-        position: absolute;
+        position: relative;
         top: 12rem;
         left: 0;
         width: 100%;
         padding: 0 4vw;
+        z-index: 2;
       }
 
       /* ---------- WELCOME TO ---------- */
@@ -369,6 +369,7 @@
         text-decoration: none;
         gap: 0.3rem;
         animation: fadeUp 0.8s ease forwards;
+        z-index: 2;
       }
 
       .scroll-label {
