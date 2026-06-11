@@ -288,6 +288,14 @@
         background-repeat: no-repeat;
         background-color: #365A7C;
       }
+      
+      #hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.10);
+        z-index: 1;
+      }
 
       .hero-content {
         position: absolute;
@@ -569,9 +577,7 @@
       
       /* ---------- 700px ---------- */
       
-      @media (max-width: 700px) {
-        .hero-content { top: 10rem; }
-        
+      @media (max-width: 700px) {    
         .welcome-to { font-size: 1.3rem; }
         
         .heartful-hound { font-size: 3.6rem; }
@@ -626,7 +632,6 @@
       
       @media (max-width: 430px) {
         .hero-content {
-          top: 8.5rem;
           padding: 0 5vw;
         }
         
@@ -638,7 +643,7 @@
 
         .scroll-indicator {
           right: 5vw;
-          bottom: 10vh;
+          bottom: 15vh;
         }
 
         #about {
@@ -760,120 +765,120 @@
  
     <main>
     
-    <section id="hero">
-      <div class="hero-content">
-        <span class="welcome-to">Welcome to</span>
-        <span class="heartful-hound">HEARTFUL HOUND</span>
-        <span class="behaviour-training">Behaviour &nbsp;&amp; Training</span>
-      </div>
-
-      <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
-        <span class="scroll-label">SCROLL DOWN</span>
-        <div class="chevrons">
-          <span class="chevron"></span>
-          <span class="chevron"></span>
+      <section id="hero">
+        <div class="hero-content">
+          <span class="welcome-to">Welcome to</span>
+          <span class="heartful-hound">HEARTFUL HOUND</span>
+          <span class="behaviour-training">Behaviour &nbsp;&amp; Training</span>
         </div>
-      </a>
-    </section>
+
+        <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
+          <span class="scroll-label">SCROLL DOWN</span>
+          <div class="chevrons">
+            <span class="chevron"></span>
+            <span class="chevron"></span>
+          </div>
+        </a>
+      </section>
 
 <!-- ───────────────────────────────────────────────── HERO PAGE ─────────────────────────────────────────────────── -->
     
-    <section id="about">
-      <div class="about-page-wrapper">
+      <section id="about">
+        <div class="about-page-wrapper">
 
-        <div class="about-top-boxes">
+          <div class="about-top-boxes">
 
-          <div class="about-box">
-            <h2 class="about-heading">About Heartful Hound</h2>
-            <div class="about-text">
-              <p>Heartful Hound was founded and is owned by Natasha Bradshaw (known to many as Tash or Nats), a qualified 
-                behaviour practitioner with a deep passion for animal behaviour and emotional wellbeing. Based in the 
-                coastal town of Warner Beach, KZN, Natasha works with companion animals and their guardians to build strong, 
-                lasting relationships grounded in trust, understanding, and kindness. With certifications including Cert.CAB, 
-                Dip.(C.A.B.T), C.C.A.B. MHERA certified, and having completed extensive studies through COAPE International, 
-                Natasha remains committed to ongoing education in this ever-evolving field. Her experience includes working 
-                within a veterinary clinic in Johannesburg North, giving her a well-rounded, practical understanding of animal 
-                care and behaviour.
-              </p>
-              <p>At the heart of Heartful Hound is a clear mission: to help prevent animals from being surrendered due to 
-                behavioural challenges. Many issues that lead to rehoming can be addressed with the right guidance, and Natasha 
-                is dedicated to supporting both dogs and their humans before problems reach that point.
-              </p>
-              <p>Her approach is rooted in compassion and science. Emotional wellbeing is always prioritised, ensuring that 
-                every animal feels safe, supported, and understood throughout the training process. Heartful Hound uses only 
-                positive reinforcement methods and does not support or use aversive tools such as choke chains, prong collars, 
-                or shock devices. These methods can cause harm and undermine trust—something that should never be compromised.
-              </p>
-              <p>Outside of her professional work, Natasha shares her life with her husband, two sons, and her two beloved dogs, 
-                Jake and Boomer. She understands firsthand both the joy and the challenges that come with living and working 
-                with animals. This perspective brings empathy, realism, and authenticity to every client she works with.
-              </p>
+            <div class="about-box">
+              <h2 class="about-heading">About Heartful Hound</h2>
+              <div class="about-text">
+                <p>Heartful Hound was founded and is owned by Natasha Bradshaw (known to many as Tash or Nats), a qualified 
+                  behaviour practitioner with a deep passion for animal behaviour and emotional wellbeing. Based in the 
+                  coastal town of Warner Beach, KZN, Natasha works with companion animals and their guardians to build strong, 
+                  lasting relationships grounded in trust, understanding, and kindness. With certifications including Cert.CAB, 
+                  Dip.(C.A.B.T), C.C.A.B. MHERA certified, and having completed extensive studies through COAPE International, 
+                  Natasha remains committed to ongoing education in this ever-evolving field. Her experience includes working 
+                  within a veterinary clinic in Johannesburg North, giving her a well-rounded, practical understanding of animal 
+                  care and behaviour.
+                </p>
+                <p>At the heart of Heartful Hound is a clear mission: to help prevent animals from being surrendered due to 
+                  behavioural challenges. Many issues that lead to rehoming can be addressed with the right guidance, and Natasha 
+                  is dedicated to supporting both dogs and their humans before problems reach that point.
+                </p>
+                <p>Her approach is rooted in compassion and science. Emotional wellbeing is always prioritised, ensuring that 
+                  every animal feels safe, supported, and understood throughout the training process. Heartful Hound uses only 
+                  positive reinforcement methods and does not support or use aversive tools such as choke chains, prong collars, 
+                  or shock devices. These methods can cause harm and undermine trust—something that should never be compromised.
+                </p>
+                <p>Outside of her professional work, Natasha shares her life with her husband, two sons, and her two beloved dogs, 
+                  Jake and Boomer. She understands firsthand both the joy and the challenges that come with living and working 
+                  with animals. This perspective brings empathy, realism, and authenticity to every client she works with.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="about-image-wrap">
-            <picture>
-              <source srcset="about-page-image.webp" type="image/webp" width="900" height="600">
-              <img src="about-page-image.jpg" alt="About Heartful Hound Dog Image" loading="lazy" width="900" height="600">
-            </picture>
-          </div>
-
-        </div>
-
-        <!-- PARTNERSHIPS HEADING -->
-        
-        <h2 class="partnerships-heading">Partnerships &amp; Professional Support</h2>
-
-        <!-- PARTNERSHIP BOXES -->
-        
-        <div class="partnership-boxes">
-
-          <!-- PARTNERSHIP BOX 2 -->
-          
-          <a href="https://www.hillspet.co.za" target="_blank" class="partnership-box">
-            <div class="partnership-logo-wrap">
+            <div class="about-image-wrap">
               <picture>
-                <source srcset="hills-logo.webp" type="image/webp" width="300" height="210">
-                <img src="hills-logo.png" alt="Hills Company Logo" width="300" height="210">
+                <source srcset="about-page-image.webp" type="image/webp" width="900" height="600">
+                <img src="about-page-image.jpg" alt="About Heartful Hound Dog Image" loading="lazy" width="900" height="600">
               </picture>
             </div>
-            <p class="partnership-text">Heartful Hound is proud to be sponsored by Hills Pet Nutrition as an official Hills 
-              Puppy School Affiliate. This partnership allows us to support puppies and their guardians with trusted, 
-              science-backed nutritional guidance alongside behavioural development.
-            </p>
-          </a>
 
-          <!-- PARTNERSHIP BOX 2 -->
+          </div>
+
+          <!-- PARTNERSHIPS HEADING -->
+        
+          <h2 class="partnerships-heading">Partnerships &amp; Professional Support</h2>
+
+          <!-- PARTNERSHIP BOXES -->
+        
+          <div class="partnership-boxes">
+
+            <!-- PARTNERSHIP BOX 2 -->
           
-          <a href="https://www.seadoonevet.co.za" target="_blank" class="partnership-box">
-            <div class="partnership-logo-wrap">
-              <picture>
-                <source srcset="seadoone-logo.webp" type="image/webp" width="300" height="282">
-                <img src="seadoone-logo.png" alt="Seadoone Veterinary Clinic Logo Image" width="300" height="282">
-              </picture>
-            </div>
-            <p class="partnership-text">We are also partnered with Seadoone Veterinary Clinic, ensuring a collaborative 
-              approach to your dog's wellbeing. By working closely with veterinary professionals, we are able to support 
-              not only behavioural needs but also the medical health of your companion—because true wellbeing is a combination 
-              of both.
-            </p>
-          </a>
+            <a href="https://www.hillspet.co.za" target="_blank" class="partnership-box">
+              <div class="partnership-logo-wrap">
+                <picture>
+                  <source srcset="hills-logo.webp" type="image/webp" width="300" height="210">
+                  <img src="hills-logo.png" alt="Hills Company Logo" width="300" height="210">
+                </picture>
+              </div>
+              <p class="partnership-text">Heartful Hound is proud to be sponsored by Hills Pet Nutrition as an official Hills 
+                Puppy School Affiliate. This partnership allows us to support puppies and their guardians with trusted, 
+                science-backed nutritional guidance alongside behavioural development.
+              </p>
+            </a>
+
+            <!-- PARTNERSHIP BOX 2 -->
+          
+            <a href="https://www.seadoonevet.co.za" target="_blank" class="partnership-box">
+              <div class="partnership-logo-wrap">
+                <picture>
+                  <source srcset="seadoone-logo.webp" type="image/webp" width="300" height="282">
+                  <img src="seadoone-logo.png" alt="Seadoone Veterinary Clinic Logo Image" width="300" height="282">
+                </picture>
+              </div>
+              <p class="partnership-text">We are also partnered with Seadoone Veterinary Clinic, ensuring a collaborative 
+                approach to your dog's wellbeing. By working closely with veterinary professionals, we are able to support 
+                not only behavioural needs but also the medical health of your companion—because true wellbeing is a combination 
+                of both.
+              </p>
+            </a>
+
+          </div>
+
+          <!-- ABOUT PAGE BUTTONS -->
+        
+          <div class="about-page-buttons">
+            <a href="whats-available.html" class="about-page-button">What's Available?</a>
+            <a href="contact.html" class="about-page-button">Contact Us</a>
+          </div>
+
+          <!-- COPYRIGHT -->
+        
+          <p class="copyright">© 2026 Heartful Hound. All rights reserved</p>
 
         </div>
-
-        <!-- ABOUT PAGE BUTTONS -->
-        
-        <div class="about-page-buttons">
-          <a href="whats-available.html" class="about-page-button">What's Available?</a>
-          <a href="contact.html" class="about-page-button">Contact Us</a>
-        </div>
-
-        <!-- COPYRIGHT -->
-        
-        <p class="copyright">© 2026 Heartful Hound. All rights reserved</p>
-
-      </div>
-    </section>
+      </section>
       
     </main>
 
