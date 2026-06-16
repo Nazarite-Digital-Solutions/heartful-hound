@@ -21,22 +21,247 @@
     
     <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg">
     <link rel="preload" as="image" href="heartful-hound-logo.webp">
-    <link rel="stylesheet" href="header-css.css">
   
     <style>
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body { font-family: 'Times New Roman', Times, sans-serif; background-color: #E6B8AD; min-height: 100vh; padding-top: 3rem; }
+
+/* ────────────────────────────────────────────────── HEADER CSS ──────────────────────────────────────────────────── */
+
+      header {
+        height: 5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
       }
 
-      body {
-        font-family: 'Times New Roman', Times, sans-serif;
-        background-color: #E6B8AD;
-        min-height: 100vh;
-        padding-top: 3rem;
+      /* ---------- NAVBAR ---------- */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 5rem;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3vw;
+        width: 100%;
       }
 
+      /* ---------- THIN GLASS LINE AT BOTTOM OF HEADER ---------- */
+
+      .navbar::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 3vw;
+        width: calc(100% - 6vw);
+        height: 1px;
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      /* ---------- LOGO ---------- */
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .navbar-logo-img { width: 10rem; }
+
+      .navbar-logo-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ---------- HAMBURGER ---------- */
+
+      .navbar-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 2.8rem;
+        height: 2.8rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0.4rem;
+        position: relative;
+        z-index: 1100;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .navbar-hamburger .bar {
+        display: block;
+        width: 1.75rem;
+        height: 2.5px;
+        background-color: black;
+        border-radius: 2px;
+        transition:
+          transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+          opacity 0.25s ease,
+          background-color 0.25s ease;
+        transform-origin: center;
+      }
+
+      .navbar-hamburger:hover .bar { background-color: white; }
+
+      .navbar-hamburger.is-open .bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+        background-color: black;
+      }
+
+      .navbar-hamburger.is-open .bar:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .navbar-hamburger.is-open .bar:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+        background-color: black;
+      }
+
+      /* ---------- HAMBURGER DROP DOWN MENU ---------- */
+
+      .navbar-dropdown {
+        position: absolute;
+        top: 5rem;
+        right: 3vw;
+        width: min(22rem, 90vw);
+        background: black;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-0.75rem) scale(0.97);
+        transform-origin: top right;
+        transition:
+          opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .navbar-dropdown.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+        transition:
+          opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .navbar-dropdown li { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+
+      .navbar-dropdown li:last-child { border-bottom: none; }
+
+      .navbar-dropdown a {
+        display: block;
+        padding: 1.1rem 1.6rem;
+        font-size: 1.05rem;
+        font-style: italic;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        transition:
+          background 0.18s ease,
+          padding-left 0.18s ease;
+      }
+
+      .navbar-dropdown a:hover {
+        background: rgba(255, 255, 255, 0.12);
+        padding-left: 2rem;
+      }
+
+      .navbar-dropdown a:focus-visible {
+        outline: 2px solid white;
+        outline-offset: 3px;
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 700px ---------- */
+
+      @media (max-width: 700px) {
+        .navbar { padding: 0 5vw; }
+
+        .navbar-logo-img {
+          width: 8rem;
+          height: 2.5rem;
+        }
+
+        .navbar-dropdown {
+          right: 5vw;
+          width: min(18rem, 90vw);
+        }
+
+        .navbar-dropdown a {
+          font-size: 1rem;
+          padding: 1rem 1.4rem;
+        }
+
+        .navbar-dropdown a:hover {
+          padding: 1rem 1.4rem;
+          background: black;
+        }
+
+        .navbar-hamburger:hover .bar { background-color: black; }
+      }
+
+      /* ---------- 430px ---------- */
+
+      @media (max-width: 430px) {
+        .navbar { padding: 0 5.5vw; }
+
+        .navbar-logo-img {
+          width: 6rem;
+          height: 2.2rem;
+        }
+
+        .navbar-hamburger {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+
+        .navbar-hamburger .bar { width: 1.5rem; }
+
+        .navbar-dropdown {
+          right: 5.5vw;
+          width: 90vw;
+          border-radius: 0.6rem;
+        }
+
+        .navbar-dropdown a {
+          font-size: 0.95rem;
+          padding: 0.95rem 1.2rem;
+        }
+
+        .navbar-dropdown a:hover {
+          padding: 0.95rem 1.2rem;
+          background: black;
+        }
+
+        .navbar-hamburger:hover .bar { background-color: black; }
+      }
+      
+/* ────────────────────────────────────────────────── REVIEWS PAGE ────────────────────────────────────────────────── */
+      
       /* ---------- REVIEWS PAGE WRAPPER ---------- */
       
       .page-wrapper {
@@ -44,7 +269,7 @@
         max-width: 820px;
         margin: 0 auto;
         padding-top: 3rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -52,7 +277,7 @@
 
       /* ---------- PAGE HEADING ---------- */
       
-      .reviews__heading {
+      .reviews-heading {
         font-size: 2.8rem;
         font-weight: 700;
         font-style: italic;
@@ -63,7 +288,7 @@
 
       /* ---------- REVIEW BOXES ---------- */
       
-      .reviews__list {
+      .reviews-boxes {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -80,7 +305,7 @@
         flex-direction: column;
       }
 
-      .review-box__body {
+      .review-box-body {
         font-size: 1rem;
         color: black;
         line-height: 1.85;
@@ -89,7 +314,7 @@
         flex: 1;
       }
 
-      .review-box__author {
+      .review-box-author {
         font-size: 1.2rem;
         font-weight: 700;
         font-style: italic;
@@ -108,20 +333,21 @@
         font-style: normal;
         text-align: center;
         margin-top: 2rem;
+        margin-bottom: 0.5rem;
       }
 
       /* ---------- BUTTONS ---------- */
       
-      .reviews__buttons {
+      .reviews-buttons {
         display: flex;
         flex-direction: row;
         gap: 1.2rem;
         justify-content: center;
         flex-wrap: wrap;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
       }
 
-      .reviews__btn {
+      .reviews-button {
         font-size: 1.2rem;
         font-weight: 700;
         font-style: italic;
@@ -136,57 +362,31 @@
         transition: transform 0.18s ease;
       }
     
-      .reviews__btn:hover {
-        transform: translateY(-4px);
-      }
+      .reviews-button:hover { transform: translateY(-4px); }
 
 /* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
-
-      /* ---------- 1024px ---------- */
-      
-      @media (max-width: 1024px) {
-        .reviews__heading { 
-          font-size: 2.4rem; 
-        }
-        
-        .page-wrapper { 
-          width: 92%; 
-        }
-        
-        .reviews__btn:hover { 
-          transform: none; 
-        }
-      }
 
       /* ---------- 700px ---------- */
       
       @media (max-width: 700px) {
-        .reviews__heading { 
-          font-size: 2rem; 
-        }
+        .reviews-heading { font-size: 2rem; }
         
         .page-wrapper { 
           width: 95%; 
           padding-top: 2.5rem; 
         }
         
-        .review-box { 
-          padding: 1.4rem 1.4rem 1.2rem; 
-        }
+        .review-box { padding: 1.4rem 1.4rem 1.2rem; }
         
-        .review-box__body { 
-          font-size: 0.97rem; 
-        }
+        .review-box-body { font-size: 0.97rem; }
         
-        .reviews__btn:hover { 
-          transform: none; 
-        }
+        .reviews-button:hover { transform: none; }
       }
 
       /* ---------- 468px ---------- */
     
-      @media (max-width: 468px) {
-        .reviews__heading { 
+      @media (max-width: 430px) {
+        .reviews-heading { 
           font-size: 1.6rem; 
           margin-bottom: 1.8rem; 
         }
@@ -196,37 +396,29 @@
           padding-top: 2rem; 
         }
         
-        .review-box { 
-          padding: 1.1rem 1rem 1rem; 
-        }
+        .review-box { padding: 1.1rem 1rem 1rem; }
         
-        .review-box__body { 
+        .review-box-body { 
           font-size: 0.92rem; 
           line-height: 1.75; 
         }
         
-        .review-box__author { 
+        .review-box-author { 
           font-size: 0.95rem; 
           margin-top: 1rem; 
           padding-top: 0.8rem; 
         }
         
-        .reviews__buttons { 
-          flex-direction: column; 
-          align-items: center; 
-          gap: 0.8rem; 
+        .reviews-buttons { gap: 0.8rem; }
+        
+        .reviews-button { 
           font-size: 1.05rem;
           padding: 0.6rem 1.3rem;
         }
         
-        .reviews__btn { 
-          font-size: 1.05rem;
-          padding: 0.6rem 1.3rem;
-        }
+        .reviews-button:hover { transform: none; }
         
-        .reviews__btn:hover { 
-          transform: none; 
-        }
+        .copyright { margin-bottom: 2rem; }
       }
     </style>
   </head>
@@ -236,94 +428,96 @@
   <body id="reviews-page">
   
 <!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
-  
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-      
-      <!-- LOGO -->
 
-      <a href="/" class="hh-navbar-logo">
-        <picture class="hh-navbar-logo-img">
-          <source srcset="heartful-hound-logo.webp" type="image/webp">
-          <img src="heartful-hound-logo.png" alt="Heartful Hound logo">
-        </picture>
-      </a>
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        
+        <!-- LOGO -->
 
-      <!-- HAMBURGER -->
+        <a href="/" class="navbar-logo">
+          <picture class="navbar-logo-img">
+            <source srcset="heartful-hound-logo.webp" type="image/webp" width="168" height="54" />
+            <img src="heartful-hound-logo.png" alt="Heartful Hound logo" width="168" height="54" fetchpriority="high" />
+          </picture>
+        </a>
 
-      <button
-        class="navbar__hamburger"
-        id="hamburgerBtn"
-        aria-expanded="false"
-        aria-controls="navDropdown"
-        aria-label="Toggle navigation menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+        <!-- HAMBURGER -->
 
-      <!-- HAMBURGER DROP DOWN LINKS -->
-      
-      <ul class="navbar__dropdown" id="navDropdown">
-        <li role="none"><a href="/" role="menuitem">Home</a></li>
-        <li role="none"><a href="/#about" role="menuitem">About</a></li>
-        <li role="none"><a href="/whats-available" role="menuitem">What's Available?</a></li>
-        <li role="none"><a href="#reviews-page" role="menuitem">Reviews</a></li>
-        <li role="none"><a href="/contact" role="menuitem">Contact</a></li>
-      </ul>
-    </nav>
+        <button
+          class="navbar-hamburger"
+          id="hamburgerBtn"
+          aria-expanded="false"
+          aria-controls="navDropdown"
+          aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- HAMBURGER DROP DOWN LINKS -->
+
+        <ul class="navbar-dropdown" id="navDropdown">
+          <li role="none"><a href="/" role="menuitem">Home</a></li>
+          <li role="none"><a href="/#about" role="menuitem">About</a></li>
+          <li role="none"><a href="/whats-available" role="menuitem">What's Available?</a></li>
+          <li role="none"><a href="#reviews-page" role="menuitem">Reviews</a></li>
+          <li role="none"><a href="/contact" role="menuitem">Contact</a></li>
+        </ul>
+      </nav>
 
 <!-- ─────────────────────────────────────────────────── SCRIPT ──────────────────────────────────────────────────── -->
 
-    <script>
-      const btn = document.getElementById("hamburgerBtn");
-      const dropdown = document.getElementById("navDropdown");
+      <script>
+        const btn = document.getElementById("hamburgerBtn");
+        const dropdown = document.getElementById("navDropdown");
 
-      btn.addEventListener("click", () => {
-        const isOpen = btn.classList.toggle("is-open");
-        dropdown.classList.toggle("is-open", isOpen);
-        btn.setAttribute("aria-expanded", isOpen);
-      });
-
-      dropdown.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          btn.classList.remove("is-open");
-          dropdown.classList.remove("is-open");
-          btn.setAttribute("aria-expanded", "false");
+        btn.addEventListener("click", () => {
+          const isOpen = btn.classList.toggle("is-open");
+          dropdown.classList.toggle("is-open", isOpen);
+          btn.setAttribute("aria-expanded", isOpen);
         });
-      });
 
-      document.addEventListener("click", (e) => {
-        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
-          btn.classList.remove("is-open");
-          dropdown.classList.remove("is-open");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-    </script>
+        dropdown.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            btn.classList.remove("is-open");
+            dropdown.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            btn.classList.remove("is-open");
+            dropdown.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </header>
     
 <!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
 
 
     <div class="page-wrapper">
 
-      <h1 class="reviews__heading">See Our Reviews</h1>
+      <h1 class="reviews-heading">See Our Reviews</h1>
 
-      <div class="reviews__list">
+      <div class="reviews-boxes">
 
         <!-- REVIEWS BOX 1 -->
         
         <div class="review-box">
-          <p class="review-box__body">
+          <p class="review-box-body">
             Natasha is absolutely incredible — I couldn't recommend her more! We did the puppy classes with her, and 
             she taught not only my puppy but, more importantly, me so much. Thank you, thank you, thank you!
           </p>
-          <p class="review-box__author">Milan Le Roux</p>
+          <p class="review-box-author">Milan Le Roux</p>
         </div>
 
          <!-- REVIEWS BOX 2 -->
         
         <div class="review-box">
-          <p class="review-box__body">
+          <p class="review-box-body">
             We enrolled Max at Heartful Hound when he was still a tiny puppy, and it was honestly one of the best 
             decisions we could have made. Since starting puppy school, he has overcome so many fears, learnt discipline, 
             and developed such wonderful manners, including learning not to chew on things he shouldn't!
@@ -339,13 +533,13 @@
             Thank you, Tash, for helping Max grow into such a happy and well-mannered boy. We couldn't recommend Heartful 
             Hound more highly!
           </p>
-          <p class="review-box__author">Veronique and Maximus</p>
+          <p class="review-box-author">Veronique and Maximus</p>
         </div>
 
         <!-- REVIEWS BOX 3 -->
         
         <div class="review-box">
-          <p class="review-box__body">
+          <p class="review-box-body">
             Natasha was honestly a LIFE SAVER in helping deal with our two dogs.
             Things she fixed:
             No more biting, no more jumping, no more eating everything in sight. WAY less digging (and an easier way to 
@@ -373,21 +567,21 @@
             Thank you so, so much Natasha. The experience was eye-opening and an absolute pleasure. Needless to say, I 
             highly recommend!
           </p>
-          <p class="review-box__author">Danielle &amp; JD</p>
+          <p class="review-box-author">Danielle &amp; JD</p>
       </div>
 
       </div>
       
       <!-- BUTTONS -->
 
-      <div class="reviews__buttons">
-        <a href="/whats-available" class="reviews__btn">What's Available?</a>
-        <a href="/contact" class="reviews__btn">Contact Us</a>
+      <div class="reviews-buttons">
+        <a href="/whats-available" class="reviews-button">What's Available?</a>
+        <a href="/contact" class="reviews-button">Contact Us</a>
       </div>
 
       <!-- COPYRIGHT -->
       
-      <p class="copyright">&copy; 2025 Heartful Hound. All rights reserved.</p>
+      <p class="copyright">&copy; 2026 Heartful Hound. All rights reserved.</p>
 
     </div>
     
