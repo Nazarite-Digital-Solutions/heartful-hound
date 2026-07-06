@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <title>Puppy School Pricing | Heartful Hound | Dog Behaviour & Training</title>
+      <meta name="description" content="Puppy school pricing from Heartful Hound. Compare group and private puppy training classes, learn what's included in our 5-week courses, and find the right option for your dog.">
+      <link rel="canonical" href="https://www.heartfulhound.co.za/puppy-school-pricing">
+
+      <!-- GOOGLE TAG -->
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KJ67N7D0T"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-1KJ67N7D0T");
+      </script>
+
+      <link rel="icon" type="image/svg+xml" href="heartful-hound-favicon.svg">
+      <link rel="preload" as="image" href="heartful-hound-logo.webp">
+
+      <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { background-color: #E6B8AD; font-family: "Times New Roman", Times, sans-serif; padding-top: 3rem; }
+        
+/* ────────────────────────────────────────────────── HEADER CSS ──────────────────────────────────────────────────── */
+
+      header {
+        height: 5rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+      }
+
+      /* ---------- NAVBAR ---------- */
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        height: 5rem;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3vw;
+        width: 100%;
+      }
+
+      /* ---------- THIN GLASS LINE AT BOTTOM OF HEADER ---------- */
+
+      .navbar::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 3vw;
+        width: calc(100% - 6vw);
+        height: 1px;
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      /* ---------- LOGO ---------- */
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .navbar-logo-img { width: 10rem; }
+
+      .navbar-logo-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ---------- HAMBURGER ---------- */
+
+      .navbar-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 2.8rem;
+        height: 2.8rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0.4rem;
+        position: relative;
+        z-index: 1100;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .navbar-hamburger .bar {
+        display: block;
+        width: 1.75rem;
+        height: 2.5px;
+        background-color: black;
+        border-radius: 2px;
+        transition:
+          transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+          opacity 0.25s ease,
+          background-color 0.25s ease;
+        transform-origin: center;
+      }
+
+      .navbar-hamburger:hover .bar { background-color: white; }
+
+      .navbar-hamburger.is-open .bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+        background-color: black;
+      }
+
+      .navbar-hamburger.is-open .bar:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .navbar-hamburger.is-open .bar:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+        background-color: black;
+      }
+
+      /* ---------- HAMBURGER DROP DOWN MENU ---------- */
+
+      .navbar-dropdown {
+        position: absolute;
+        top: 5rem;
+        right: 3vw;
+        width: min(22rem, 90vw);
+        background: black;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-0.75rem) scale(0.97);
+        transform-origin: top right;
+        transition:
+          opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .navbar-dropdown.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+        transition:
+          opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .navbar-dropdown li { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+
+      .navbar-dropdown li:last-child { border-bottom: none; }
+
+      .navbar-dropdown a {
+        display: block;
+        padding: 1.1rem 1.6rem;
+        font-size: 1.05rem;
+        font-style: italic;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        transition:
+          background 0.18s ease,
+          padding-left 0.18s ease;
+      }
+
+      .navbar-dropdown a:hover {
+        background: rgba(255, 255, 255, 0.12);
+        padding-left: 2rem;
+      }
+
+      .navbar-dropdown a:focus-visible {
+        outline: 2px solid white;
+        outline-offset: 3px;
+      }
+
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 700px ---------- */
+
+      @media (max-width: 700px) {
+        .navbar { padding: 0 5vw; }
+
+        .navbar-logo-img {
+          width: 8rem;
+          height: 2.5rem;
+        }
+
+        .navbar-dropdown {
+          right: 5vw;
+          width: min(18rem, 90vw);
+        }
+
+        .navbar-dropdown a {
+          font-size: 1rem;
+          padding: 1rem 1.4rem;
+        }
+
+        .navbar-dropdown a:hover {
+          padding: 1rem 1.4rem;
+          background: black;
+        }
+
+        .navbar-hamburger:hover .bar { background-color: black; }
+      }
+
+      /* ---------- 430px ---------- */
+
+      @media (max-width: 430px) {
+        .navbar { padding: 0 5.5vw; }
+
+        .navbar-logo-img {
+          width: 6rem;
+          height: 2.2rem;
+        }
+
+        .navbar-hamburger {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+
+        .navbar-hamburger .bar { width: 1.5rem; }
+
+        .navbar-dropdown {
+          right: 5.5vw;
+          width: 90vw;
+          border-radius: 0.6rem;
+        }
+
+        .navbar-dropdown a {
+          font-size: 0.95rem;
+          padding: 0.95rem 1.2rem;
+        }
+
+        .navbar-dropdown a:hover {
+          padding: 0.95rem 1.2rem;
+          background: black;
+        }
+
+        .navbar-hamburger:hover .bar { background-color: black; }
+      }
+        
+/* ─────────────────────────────────────────────── PAGE CONTENT CSS ───────────────────────────────────────────────── */
+        
+      #puppy-school-pricing-page {
+        scroll-margin-top: 10rem;
+      }
+        
+      /* ---------- PUPPY SCHOOL PRICING WRAPPER ---------- */
+        
+      .puppy-school-pricing-wrapper {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 0 2rem;
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+        
+      /* ---------- PUPPY SCHOOL HEADING ---------- */
+        
+      .puppy-school-heading {
+        font-size: 2.8rem;
+        font-style: italic;
+        color: #000;
+        margin-bottom: 1.5rem;
+      }
+        
+      /* ---------- INFO BOX ---------- */
+        
+      .info-text-box {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        border: 2px solid #6f6f6f;
+        border-radius: 0.5rem;
+        background-color: white;
+        text-align: center;
+      }
+        
+      .info-text {
+        font-size: 1.4rem;
+        color: black;
+      }
+        
+      .bold-text { font-weight: 700; }
+      
+      /* ---------- PUPPY SCHOOL FOCUS BOX ---------- */  
+        
+      .puppy-school-focus-heading {
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 700;
+        font-style: italic;
+        text-decoration: 2px underline #6f6f6f;
+        padding-bottom: 1rem;
+      }
+        
+      .puppy-school-focus-box {
+        margin: 3rem auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 1.5rem;
+        border: 2px solid #6f6f6f;
+        border-radius: 0.5rem;
+        background-color: white;
+        text-align: center;  
+      }
+        
+      .puppy-school-focus-points {
+        font-size: 1.2rem;
+        color: #222;
+        padding-bottom: 0.25rem;
+        text-align: center;  
+      }
+        
+      .please-note {
+        padding-top: 1rem;
+        font-size: 1.4rem;
+        color: black;
+        font-weight: 700;
+      }
+        
+      .please-note-text {
+        font-size: 1.2rem;
+        color: black;
+      }
+        
+      /* ---------- CLASS OPTIONS HEADING ---------- */
+        
+      .class-options-heading {
+        font-size: 2.4rem;
+        color: black;
+        font-weight: 700;
+        font-style: italic;
+      }
+        
+      /* ---------- LITTLE LEGENDS BOX ---------- */
+        
+      .little-legends-box {
+        margin: 1.5rem auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        border: 2px solid #6f6f6f;
+        border-radius: 0.5rem;
+        background-color: white;
+        text-align: center;  
+      }
+        
+      .little-legends-box-heading {
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 700;
+        font-style: italic;
+        text-decoration: 2px underline #6f6f6f;
+        padding-bottom: 1rem;
+      }
+        
+      .little-legends-box-points {
+        font-size: 1.2rem;
+        color: #222;
+        text-align: center;  
+      }
+        
+      .little-legends-sentence {
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        color: black; 
+      }
+        
+      /* ---------- PRIVATE CLASSES BOX ---------- */
+        
+      .private-classes-box {
+        margin: 3rem auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        border: 2px solid #6f6f6f;
+        border-radius: 0.5rem;
+        background-color: white;
+        text-align: center;   
+      }
+        
+      .private-classes-box-heading {
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 700;
+        font-style: italic;
+        text-decoration: 2px underline #6f6f6f;
+        padding-bottom: 1rem;
+      }
+        
+      .private-classes-box-subheading {
+        padding-bottom: 0.3rem;
+        font-size: 1.3rem;
+        color: black;
+        font-weight: 700;
+      }
+        
+      .private-classes-box-second-subheading {
+        padding-top: 1.2rem;
+        padding-bottom: 0.3rem;
+        font-size: 1.3rem;
+        color: black;
+        font-weight: 700;
+      }
+        
+      .private-classes-box-points {
+        font-size: 1.2rem;
+        color: #222;
+        text-align: center;  
+      }
+        
+      .private-classes-sentence {
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        color: black;   
+      }
+        
+      /* ---------- COPYRIGHT ---------- */
+
+      .copyright {
+        font-size: 0.8rem;
+        color: black;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+      }
+        
+/* ───────────────────────────────────────────────── MEDIA QUERIES ────────────────────────────────────────────────── */
+
+      /* ---------- 700px ---------- */
+
+      @media (max-width: 700px) {
+        .puppy-school-heading { font-size: 2.2rem; }
+        
+        .info-text-box,
+        .puppy-school-focus-box,
+        .little-legends-box,
+        .private-classes-box {
+          width: 94%;
+          padding: 1rem;
+        }
+        
+        .little-legends-box { margin: 1rem auto; }
+        
+        .info-text { font-size: 1.2rem; }
+        
+        .puppy-school-focus-heading { font-size: 1.4rem; }
+        
+        .class-options-heading { font-size: 2rem; }
+        
+        .little-legends-box-heading { font-size: 1.4rem; }
+        
+        .private-classes-box-heading { font-size: 1.4rem; } 
+      }
+        
+      /* ---------- 430px ---------- */
+
+      @media (max-width: 430px) {
+        .puppy-school-pricing-wrapper { width: 98%; }
+        
+        .puppy-school-heading { font-size: 1.8rem; }
+        
+        .info-text-box,
+        .puppy-school-focus-box,
+        .little-legends-box,
+        .private-classes-box {
+          width: 94%;
+        }
+        
+        .info-text { font-size: 1rem; }
+        
+        .puppy-school-focus-heading { font-size: 1.1rem; }
+        
+        .puppy-school-focus-points { font-size: 1rem; }
+        
+        .please-note { font-size: 1.2rem; }
+        
+        .please-note-text { font-size: 1rem; }
+        
+        .class-options-heading { font-size: 1.4rem; }
+        
+        .little-legends-box-heading { font-size: 1rem; }
+        
+        .little-legends-box-points { font-size: 1rem; }
+        
+        .little-legends-sentence { font-size: 1rem; }
+        
+        .private-classes-box-heading { font-size: 1.1rem; }
+        
+        .private-classes-box-subheading { font-size: 1rem; }
+        
+        .private-classes-box-second-subheading { font-size: 1rem; }
+        
+        .private-classes-box-points { font-size: 0.95rem; }
+        
+        .private-classes-sentence { font-size: 1rem; }
+        
+        .copyright { padding-bottom: 1.5rem; }
+      }  
+    </style>
+  </head>
+    
+<!-- ──────────────────────────────────────────────────── BODY ───────────────────────────────────────────────────── -->
+    
+  <body>
+    
+<!-- ─────────────────────────────────────────────────── HEADER ──────────────────────────────────────────────────── -->
+
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        
+        <!-- LOGO -->
+
+        <a href="/" class="navbar-logo">
+          <picture class="navbar-logo-img">
+            <source srcset="heartful-hound-logo.webp" type="image/webp" width="168" height="54" />
+            <img src="heartful-hound-logo.png" alt="Heartful Hound logo" width="168" height="54" fetchpriority="high" />
+          </picture>
+        </a>
+
+        <!-- HAMBURGER -->
+
+        <button
+          class="navbar-hamburger"
+          id="hamburgerBtn"
+          aria-expanded="false"
+          aria-controls="navDropdown"
+          aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- HAMBURGER DROP DOWN LINKS -->
+
+        <ul class="navbar-dropdown" id="navDropdown">
+          <li role="none"><a href="/" role="menuitem">Home</a></li>
+          <li role="none"><a href="/#about" role="menuitem">About</a></li>
+          <li role="none"><a href="/whats-available" role="menuitem">What's Available?</a></li>
+          <li role="none"><a href="#puppy-school-classes-and-pricing" role="menuitem">Puppy School Classes & Pricing</a></li>
+          <li role="none"><a href="/reviews" role="menuitem">Reviews</a></li>
+          <li role="none"><a href="/contact" role="menuitem">Contact</a></li>
+        </ul>
+      </nav>
+
+<!-- ─────────────────────────────────────────────────── SCRIPT ──────────────────────────────────────────────────── -->
+
+      <script>
+        const btn = document.getElementById("hamburgerBtn");
+        const dropdown = document.getElementById("navDropdown");
+
+        btn.addEventListener("click", () => {
+          const isOpen = btn.classList.toggle("is-open");
+          dropdown.classList.toggle("is-open", isOpen);
+          btn.setAttribute("aria-expanded", isOpen);
+        });
+
+        dropdown.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            btn.classList.remove("is-open");
+            dropdown.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("click", (e) => {
+          if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            btn.classList.remove("is-open");
+            dropdown.classList.remove("is-open");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </header>
+    
+<!-- ──────────────────────────────────────────────── PAGE CONTENT ───────────────────────────────────────────────── -->
+    
+    <main class="puppy-school-pricing-wrapper" id="puppy-school-classes-and-pricing">
+    
+      <!-- PUPPY SCHOOL HEADING -->
+      
+      <h1 class="puppy-school-heading">Puppy School</h1>
+      
+      <!-- INFO BOX -->
+      
+      <div class="info-text-box">
+      
+        <p class="info-text">All our courses run over <span class="bold-text">5 weeks</span>, with <span class="bold-text">one 1-hour session per week.</span></p>
+      
+        <p class="info-text">To get the best results, it’s important that you <span class="bold-text">practice the skills at home</span> between each lesson. 
+          Training is a journey, and consistency makes all the difference!
+        </p>
+      
+      </div>
+      
+      <!-- PUPPY SCHOOL FOCUS BOX -->
+      
+      <div class="puppy-school-focus-box"> 
+        
+        <h2 class="puppy-school-focus-heading">Our puppy school focuses on:</h2>
+        <div class="puppy-school-focus-points">&bull; Teaching <span class="bold-text">essential foundation skills</span></div>
+        <div class="puppy-school-focus-points">&bull; Building <span class="bold-text">confidence and good behaviour</span></div>
+        <div class="puppy-school-focus-points">&bull; Guided <span class="bold-text">socialisation</span> in a fun, safe, and supportive environment</div>
+        <div class="puppy-school-focus-points">&bull; Helpful, easy-to-understand <span class="bold-text">education for owners</span></div>
+        
+        <p class="please-note">Please note:</p>
+        
+        <p class="please-note-text">These classes are designed <span class="bold-text">for puppies as well as older dogs who have not had any formal training before</span></p>
+        
+      </div>
+      
+      <!-- CLASS OPTIONS HEADING -->
+      
+      <h2 class="class-options-heading">Class Options</h2>
+      
+      <!-- LITTLE LEGENDS BOX -->
+      
+      <div class="little-legends-box">
+        <h3 class="little-legends-box-heading">Little Legends Class & Rebel Class (Group Classes)</h3>
+        <div class="little-legends-box-points">&bull; Held at Seadoone Veterinary Clinic</div>
+        <div class="little-legends-box-points">&bull; R1200 per puppy (5-week course)</div>
+        
+        <p class="little-legends-sentence">Contact Seadoone veterinary clinic directly to book your spot for the group classes</p>
+      </div>
+      
+      <!-- PRIVATE CLASSES BOX -->
+      
+      <div class="private-classes-box">
+        
+        <h3 class="private-classes-box-heading">Private Classes</h3>
+        <h4 class="private-classes-box-subheading">Available for:</h4>
+        <div class="private-classes-box-points">&bull; Little Legends</div>
+        <div class="private-classes-box-points">&bull; Rebel Class</div>
+        <div class="private-classes-box-points">&bull; Teen Spirit Class</div>
+        <div class="private-classes-box-points">&bull; Glow Up Class</div>
+        <div class="private-classes-box-points"><span class="bold-text">R1800 (5-week course)</span></div>
+        
+        <h4 class="private-classes-box-second-subheading">Private sessions are ideal if you:</h4>
+        <div class="private-classes-box-points">&bull; Prefer <span class="bold-text">one-on-one guidance</span></div>
+        <div class="private-classes-box-points">&bull; Private classes can be held <span class="bold-text">at your home</span> or at the Seadoone Veterinary Clinic training facility</div>
+        <div class="private-classes-box-points">&bull; Need a more <span class="bold-text">tailored approach</span> for your puppy or dog</div>
+        
+        <p class="private-classes-sentence">Contact Heartful Hound directly if you would like to book any private classes</p>
+      
+      </div>
+      
+      <!-- COPYRIGHT -->
+
+      <p class="copyright">&copy; 2026 Heartful Hound. All rights reserved.</p>
+      
+    </main>
+    
+  </body>
+</html>
