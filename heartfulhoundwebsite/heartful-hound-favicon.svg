@@ -1,22 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <text
-    x="2"
-    y="52"
+<text
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    dominant-baseline="central"
     font-family="'Times New Roman', Times, serif"
-    font-size="48"
+    font-size="44"
     font-weight="bold"
-    text-transform="uppercase"
-    fill="#E2E2E2"
-    letter-spacing="-2"
-  >H</text>
-  <text
-    x="30"
-    y="52"
-    font-family="'Times New Roman', Times, serif"
-    font-size="48"
-    font-weight="bold"
-    text-transform="uppercase"
-    fill="#D78D7C"
-    letter-spacing="-2"
-  >H</text>
+    letter-spacing="-2">
+    <tspan fill="#E2E2E2">H</tspan><tspan fill="#D78D7C">H</tspan>
+</text>
 </svg>
